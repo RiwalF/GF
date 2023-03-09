@@ -1,0 +1,63 @@
+*{
+    font-family: calibri;
+    font-size: 15%;
+}
+
+img{
+    width: 30px;
+    height: 15px;
+}
+
+table{
+    width: 100%;
+}
+
+div{
+    /*background-color: rgb(212, 243, 237);*/
+    background-color: rgb(101, 141, 179);
+    
+}
+
+.fondBlanc{
+    background-color: white;
+}
+
+/*
+.fondBleu{
+    background-color: rgb(212, 243, 237);
+}
+*/
+
+.fondBleuCiel{
+    background-color: lightcyan;
+}
+
+.policeTurquoise{
+    color: rgb(32, 95, 178);
+    /*color: rgb(101, 141, 179);*/
+}
+
+/*
+.textLeft{
+    text-align: start;
+}
+*/
+
+.textCenter{
+    text-align: center;
+}
+
+/*
+.textRight{
+    text-align: end;
+}
+*/
+
+.borduresCollees{
+    border-collapse: collapse;
+}
+
+.pictureCenter{
+    display: flex;
+
+}
