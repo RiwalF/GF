@@ -1,5 +1,5 @@
 <?php
-
+echo "test";
 include 'mesFonctionsGenerales.php';
 
 $id = $_GET["id"];
