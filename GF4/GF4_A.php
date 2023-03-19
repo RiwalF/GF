@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors", 1); 
 include '../mesFonctionsGenerales.php';
 $IDENTIFIANT = $_GET["id"];
 ?>
