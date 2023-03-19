@@ -46,17 +46,12 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
 ?>
 
-<!DOCTYPE html>
-
 <html>
 
     <head lang=fr>
-
-        <meta charset="utf-8">
-
         <title>Fiche Frais</title>
-
-        <link href="GF3.css" rel="stylesheet" type="text/css" />
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="GF3.css"/>
 
     </head>
 
