@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors", 1); 
 include 'mesFonctionsGenerales.php';
 
 function SQLget($sql){
