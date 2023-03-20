@@ -62,7 +62,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
             </tr>
         </table>
 
-        <table>
+        <table class="tableau">
             <thead>
                 <tr>
                     <th><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></th>
