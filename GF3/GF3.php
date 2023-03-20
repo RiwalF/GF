@@ -50,19 +50,28 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
     <head lang=fr>
         <title>Fiche Frais</title>
         <meta charset="utf-8">
-        <link type="text/css" rel="stylesheet" href="../GF4.css"/>
+        <link type="text/css" rel="stylesheet" href="GF3.css"/>
 
     </head>
 
     <body>
 
+
+
         <table>
-            <tr>
-                <th><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></th>
-                <th></th>
-                <th><strong>Ajouter</strong></th>
-                <th><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png"></a></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></th>
+                    <th><strong>Ajouter</strong><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png"></a></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The table body</td>
+                    <td>with two columns</td>
+                </tr>
+            </tbody>
         </table>
         
         <div><!--  class="fondBleu" -->
