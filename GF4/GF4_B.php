@@ -63,16 +63,16 @@ if ($Km <= 0){
     $nbJustificatifs += 1;
 }
 
-$prix_repas = SQLget("SELECT montant FROM Forfait WHERE id = 'REP'");
+$prix_repas = SQLget("SELECT montant FROM forfait WHERE id = 'REP'");
 $Repas_total = $Repas * $prix_repas;
 
-$prix_nuit = SQLget("SELECT montant FROM Forfait WHERE id = 'NUI'");
+$prix_nuit = SQLget("SELECT montant FROM forfait WHERE id = 'NUI'");
 $Nuit_total = $Nuit * $prix_nuit;
 
-$prix_etape = SQLget("SELECT montant FROM Forfait WHERE id = 'ETP'");
+$prix_etape = SQLget("SELECT montant FROM forfait WHERE id = 'ETP'");
 $Etape_total = $Etape * $prix_etape;
 
-$prix_km = SQLget("SELECT montant FROM Forfait WHERE id = 'KM'");
+$prix_km = SQLget("SELECT montant FROM forfait WHERE id = 'KM'");
 $Km_total = $Km * $prix_km;
 
 $Total = $Repas_total+$Nuit_total+$Etape_total+$Km_total;
