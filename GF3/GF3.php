@@ -41,8 +41,6 @@ $id = $_GET['id'];
 
 $nom_prenom_visiteur = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
 
-var_dump($nom_prenom_visiteur);
-
 $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN (SELECT id FROM visiteur WHERE nom='$nom_prenom_visiteur[0]' AND prenom='$nom_prenom_visiteur[1]')");
 
 ?>
@@ -64,7 +62,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                 <tr>
 
-                    <td class="policeTurquoise"><strong>Fiche de frais de : <?php echo strtoupper($nom_prenom_visiteur[0]); ?></strong></td>
+                    <td class="policeTurquoise"><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></td>
                     <td class="policeTurquoise"></td>
                     <td class="policeTurquoise"><strong>Ajouter</strong></td>
                     <td><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png"></a></td>
