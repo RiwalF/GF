@@ -5,9 +5,7 @@
 tableau,
 td {
     border: 1px solid rgb(101, 141, 179);
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
+    table-layout: auto;
 }
 
 thead,
