@@ -43,7 +43,6 @@ $mois =$_GET['mois'];
 $annee=$_GET['annee'];
 
 $idFichefrais = SQLgetval("SELECT id FROM fichefrais WHERE idVisiteur='$id' AND mois='$mois' AND annee='$annee';");
-echo "SELECT id FROM fichefrais WHERE idVisiteur='$id' AND mois='$mois' AND annee='$annee';";
 $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'REP' AND idFicheFrais = '$idFichefrais'");
 $Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'KM' AND idFicheFrais = '$idFichefrais'");
 $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'ETP' AND idFicheFrais = '$idFichefrais'");
