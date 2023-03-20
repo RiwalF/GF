@@ -116,7 +116,7 @@ if (gettype($verif) != "array"){
                 </tr>
             </table>
             <fieldset>
-            <h1 class='titre2'>Fiche Frais</h1><BR>
+                <h1 class='titre2'>Fiche Frais</h1><BR>
                 <h3 class='hp'>Repas : <?php echo $Repas_total; ?> €</h3>
                 <h3 class='hp'>Nuitées : <?php echo $Nuit_total; ?> €</h3>
                 <h3 class='hp'>Etape : <?php echo $Etape_total; ?> €</h3>
@@ -131,4 +131,3 @@ if (gettype($verif) != "array"){
         </form>
     </body>
 </html>
-/
