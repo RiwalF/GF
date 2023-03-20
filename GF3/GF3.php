@@ -57,18 +57,13 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
     <body>
 
         <div><!--  class="fondBleu" -->
-
-            <table >
-
+            <table>
                 <tr>
-
-                    <td class=""><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></td>
-                    <td class=""></td>
-                    <td class=""><strong>Ajouter</strong></td>
-                    <td><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png"></a></td>
-                
+                    <th class=""><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></th>
+                    <th class=""></th>
+                    <th class=""><strong>Ajouter</strong></th>
+                    <th><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png"></a></th>
                 </tr>
-
             </table>
         
         </div>
@@ -79,10 +74,10 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                 <tr class="fondBleuCiel">
 
-                    <td title="Date">Date</td>
-                    <td class="textCenter">Supprimer</td>
-                    <td class="textCenter">Modifier</td>
-                    <td class="textCenter">Voir</td>
+                    <th title="Date">Date</th>
+                    <th class="textCenter">Supprimer</th>
+                    <th class="textCenter">Modifier</th>
+                    <th class="textCenter">Voir</th>
 
                 </tr>
 
@@ -100,44 +95,44 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                     <tr class="fondBlanc">
                         
-                        <td>
+                        <th>
 
                             <?php print($fichefrais[$i][2] . "/" . $fichefrais[$i][3] . " " . $fichefrais[$i][5] . " " . $fichefrais[$i][7]); ?>
 
-                        </td>
+                        </th>
                         <?php                   
                             if ($idEtat==SQLgetval("SELECT libelle FROM etat WHERE id = 'CR';"))
                             {
                         ?>
-                        <td title="Supprimer">
+                        <th title="Supprimer">
                                 <a href="GF3_DELETE.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
                                     <img class="pictureCenter" src="https://us.123rf.com/450wm/oliveradesign/oliveradesign1812/oliveradesign181200007/126817569-ic%C3%B4ne-ouverte-poubelle-isol%C3%A9-sur-fond-blanc-illustration-vectorielle-.jpg?ver=6">
                                 </a>
-                        </td>
+                        </th>
 
-                        <td title="Modifier">
+                        <th title="Modifier">
                                 <a href="../GF4/GF4_C.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
                                     <img class="pictureCenter" src="https://us.123rf.com/450wm/alekseyvanin/alekseyvanin1708/alekseyvanin170800346/83846475-document-avec-stylo-ic%C3%B4ne-de-contour-rempli-signe-de-vecteur-ligne-pictogramme-color%C3%A9-lin%C3%A9aire-isol%C3%A9.jpg">
                                 </a>
-                        </td>
+                        </th>
                         <?php
                             }else{
                         ?>
-                            <td title="Supprimer">
-                            </td>
-                            <td title="Modifier">
-                            </td>
+                            <th title="Supprimer">
+                            </th>
+                            <th title="Modifier">
+                            </th>
                         <?php        
                             }
                         ?>
 
-                        <td title="Voir">
+                        <th title="Voir">
                             
                             <a href="../GF5/GF5.php ? id=<?php echo $id; ?>& mois=<?php echo $mois; ?>& annee=<?php echo $annee; ?>">
                                 <img class="pictureCenter" src="https://us.123rf.com/450wm/alekseyvanin/alekseyvanin1704/alekseyvanin170401467/75473998-vecteur-d-ic%C3%B4ne-oeil-illustration-de-logo-solide-vision-pictogramme-isol%C3%A9-sur-blanc.jpg?ver=6">
                             </a>
                         
-                        </td>
+                        </th>
 
                     </tr>
 
