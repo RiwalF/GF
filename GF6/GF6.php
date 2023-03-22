@@ -58,7 +58,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                             for ($i=0; $i < count($tab_id); $i++) { 
                                 $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '".$tab_id[$i][2]."'AND annee = '".$tab_id[$i][1]."' AND idVisiteur = '".$tab_id[$i][0]."'");
                         ?>                        
-                                <option value="<?php echo $idFicheFrais;?>"><?php echo $tab_id[$i][0]." - ".$tab_id[$i][2]."/"$tab_id[$i][1] ; ?></option>
+                                <option value="<?php echo $idFicheFrais;?>"><?php echo $tab_id[$i][0]." - ".$tab_id[$i][2]."/".$tab_id[$i][1]; ?></option>
                         <?php
                             }
                         ?>
