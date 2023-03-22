@@ -56,7 +56,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                     <br/>
                     <h2 class="titre2">Frais au forfait</h2>
                     <br />
-                <input type="submit" name="submit" value="Valider" />
+                <input type="submit" name="submit" value="Rechercher"/> <br/><br/><br/>
 
 
 
