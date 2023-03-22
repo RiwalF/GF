@@ -87,7 +87,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                         <input type="radio" value="NonValide" name="choix" id = "NonValide"></input><label class="boutton" for="NonValide">Non Valide</label>
                 </tr>
             </table>
-            <input type="submit" name="submit" value="Valider"/>
+            <input type="submit" name="submit" value="Valider"/><br/><br/>
 
             </fieldset class = "orange">
         </form>    

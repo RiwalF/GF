@@ -1,6 +1,4 @@
 <?php
-ini_set("display_errors", 1); 
-
 function connexion(){
     $host = "localhost";
         $user = "root";
