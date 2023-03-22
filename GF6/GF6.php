@@ -52,12 +52,11 @@ if ($idFicheFrais != NULL) {
         <form name="GF6.php" action="GF6.php" method="get">
             <fieldset class = "orange">
                 <h1 class="titre2">Validation des Frais par visiteur</h1><br />
-                
 
-                    <select>
-                        <option selected="selected">Choisir le visiteur</option>
+                    <select id="select-visiteur">
+                        <option selected="selected" name="visiteur" id="visiteur">Choisir le visiteur</option>
                         <?php
-                            // Parcourir le tableau des langues
+                            // Parcourir le tableau des visiteurs
                             for ($i=0; $i < count($tab_id); $i++) { 
                         ?>
                                 <option value="<?php echo strtolower($tab_id[$i][0]); ?>"><?php echo $tab_id[$i][0]; ?></option>
@@ -66,13 +65,26 @@ if ($idFicheFrais != NULL) {
                         ?>
                     </select>
 
+                    <script>
+                        // Récupère la balise select et ajoute un écouteur d'événements pour détecter les changements de sélection
+                        var selectElmt = document.getElementById("select-visiteur");
+                        selectElmt.addEventListener("change", function() {
+                            // Met à jour la variable $idvisiteur avec la valeur sélectionnée
+                            var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+                            <?php $idvisiteur = ?> valeurselectionnee;
+                        });
+                    </script>
+
+                    <?php
+                        $mois_annee = SQLgetval("SELECT annee,mois FROM fichefrais WHERE idVisiteur = '$idvisiteur'");
+                    ?>
+
                     <select>
                         <option selected="selected">Mois</option>
                         <?php
-                            // Parcourir le tableau des langues
                             for ($i=0; $i < count($tab_id); $i++) { 
                         ?>
-                                <option value="<?php echo strtolower($tab_id[$i][2]); ?>"><?php echo $tab_id[$i][2]; ?></option>
+                                <option value="<?php echo strtolower($mois_annee[1]); ?>"><?php echo $mois_annee[1]; ?></option>
                         <?php
                             }
                         ?>
@@ -81,10 +93,9 @@ if ($idFicheFrais != NULL) {
                     <select>
                         <option selected="selected">Année</option>
                         <?php
-                            // Parcourir le tableau des langues
                             for ($i=0; $i < count($tab_id); $i++) { 
                         ?>
-                                <option value="<?php echo strtolower($tab_id[$i][1]); ?>"><?php echo $tab_id[$i][1]; ?></option>
+                                <option value="<?php echo strtolower($mois_annee[0]); ?>"><?php echo $mois_annee[0]; ?></option>
                         <?php
                             }
                         ?>
