@@ -53,6 +53,43 @@ if ($idFicheFrais != NULL) {
             <fieldset class = "orange">
                 <h1 class="titre2">Validation des Frais par visiteur</h1><br />
                 
+
+                    <select>
+                        <option selected="selected">Choisir le visiteur</option>
+                        <?php
+                            // Parcourir le tableau des langues
+                            for ($i=0; $i < count($tab_id); $i++) { 
+                        ?>
+                                <option value="<?php echo strtolower($tab_id[$i][0]); ?>"><?php echo $tab_id[$i][0]; ?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+
+                    <select>
+                        <option selected="selected">Mois</option>
+                        <?php
+                            // Parcourir le tableau des langues
+                            for ($i=0; $i < count($tab_id); $i++) { 
+                        ?>
+                                <option value="<?php echo strtolower($tab_id[$i][2]); ?>"><?php echo $tab_id[$i][2]; ?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+
+                    <select>
+                        <option selected="selected">Année</option>
+                        <?php
+                            // Parcourir le tableau des langues
+                            for ($i=0; $i < count($tab_id); $i++) { 
+                        ?>
+                                <option value="<?php echo strtolower($tab_id[$i][1]); ?>"><?php echo $tab_id[$i][1]; ?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+
 <pre><label for="choix" class="titre2" > Choisir le visiteur : </label><input style="width: 120px;" list="choix_visiteur" id="id" name="id" value="<?php echo $idvisit;?>"/><br />
 <label for="mois_an" class="titre2" > Mois :                </label><input style="width: 55px;" list="mois" name="mois" value="<?php echo $mois;?>"/> <input style="width: 55px;" list="an" name="an" value="<?php echo $an;?>"/></pre>
 
@@ -83,25 +120,11 @@ if ($idFicheFrais != NULL) {
 
 
 
-            <select>
-      <option selected="selected">Sélectionner une valeur</option>
-      <?php
-      $langages = array("PHP", "Java", "Ada", "HTML", "CSS");
-      
-      // Parcourir le tableau des langues
-      foreach($langages as $value){
-      ?>
-      <option value="<?php echo strtolower($value); ?>"><?php echo $value; ?></option>
-      <?php
-      }
-      ?>
-    </select>
 
             <datalist id = "choix_visiteur">
 
                 <?php 
                 
-                $tab_id = SQLget("SELECT DISTINCT visiteur.id,mois,annee FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
                 for ($i=0; $i < count($tab_id); $i++) { 
                     echo "<option value='".$tab_id[$i][0]."'><br />\n";
                 }
