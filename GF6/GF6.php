@@ -88,7 +88,7 @@ if ($idFicheFrais != NULL) {
                 
                 $tab_id = SQLget("SELECT DISTINCT visiteur.id,mois,annee FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
                 for ($i=0; $i < count($tab_id); $i++) { 
-                    echo "<option value='test'><br />\n";
+                    echo "<option value='".$tab_id[$i][0]."'><br />\n";
                 }
 
                 ?>

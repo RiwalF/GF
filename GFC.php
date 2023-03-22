@@ -42,9 +42,16 @@ if ($tab_id != NULL) {
                 <label class="titre2">Validation des Frais <input type="submit"/></label></br></br>
                 <a href="GF7/GF7.php"><label class="PAIEMENT">Mettre en paiement</label>
             </fieldset>
-            <input id="mois" name="mois" type="hidden" value="<?php echo $mois; ?>">
-            <input id="an" name="an" type="hidden" value="<?php echo $annee; ?>">
-            <input id="id" name="id" type="hidden" value="<?php echo $id; ?>">
+            <?php
+            if ($ExisteFicheFrais) {
+            ?>
+                <input id="mois" name="mois" type="hidden" value="<?php echo $mois; ?>">
+                <input id="an" name="an" type="hidden" value="<?php echo $annee; ?>">
+                <input id="id" name="id" type="hidden" value="<?php echo $id; ?>">
+            <?php
+            }
+            ?>
+            
         </form>
     </body>
 </html>
