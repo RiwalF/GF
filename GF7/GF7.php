@@ -42,7 +42,7 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
         <p style = "text-align: center ; text-align: middle ; font-size: 50px ; font-family: Calibri ; color: white ;"><br><br><br><strong>Toutes les fiches de frais à l’état "Validée" ont été mises en</br>
         paiement et sont passées à l’état "Remboursée"</strong></p>
 
-        <form name="GF4" action="../GFC" method="get">
+        <form name="GF4" action="../GFC.php" method="get">
 
             <div>
 
