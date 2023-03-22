@@ -61,7 +61,9 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
                 <th><img src="../GF4/GSB.jpg"></th>
             </tr>
         </table>
-
+        <br/>
+        <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GSB_Connexions.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+        <br/><br/>
         <table class="tableau">
             <thead>
                 <tr>

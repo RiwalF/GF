@@ -69,6 +69,9 @@ $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI
 
                 <fieldset>
                 <h1 class="titre2">Saisie</h1><BR>
+                <br/>
+                <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GSB_Connexions.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+                <br/><br/>
                 <div>
                     <pre>
 <h class="titre2">PERIODE            </h><label for="mois" class="titre2"> Mois (2 chiffres) : </label><input value = "<?php echo $mois;?>" readonly = "readonly" type="number" id="mois" name="mois" /><label for="Annee" class="titre2" > Année (4 chiffres) : </label><input value = "<?php echo $annee;?>" readonly = "readonly" type="number" id="Annee" name="Annee" />

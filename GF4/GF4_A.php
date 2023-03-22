@@ -22,6 +22,9 @@ $IDENTIFIANT = $_GET["id"];
 
                 <fieldset>
                 <h1 class="titre2">Saisie</h1><BR>
+                <br/>
+                <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GF3/GF3.php?id=<?php echo $IDENTIFIANT;?>'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+                <br/><br/>
                 <div>
                     <pre>
 <h class="titre2">PERIODE            </h><label for="mois" class="titre2"> Mois (2 chiffres) : </label><input value = "<?php echo date("m") ?>" readonly = "readonly" type="number" id="mois" name="mois" /><label for="Annee" class="titre2" > Année (4 chiffres) : </label><input value = "<?php echo date("Y") ?>" readonly = "readonly" type="number" id="Annee" name="Annee" />

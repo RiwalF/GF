@@ -44,7 +44,10 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
     <body>
         <form name="GF6.php" action="GF6.php" method="get">
             <fieldset class="orange">
-                <h1 class="titre2">Validation des Frais par visiteur</h1>
+                <h1 class="titre2">Validation des Frais des visiteur</h1>
+                    <br/>
+                    <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GFC.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+                    <br/><br/>
                 <br />
                     <select id="ficheFraisList" name="idFicheFrais">
                         <option selected disabled>Choisir la fiche de frais :</option>
@@ -55,8 +58,6 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                             }
                         ?>
                     </select>
-                    <br/>
-                    <h2 class="titre2">Frais au forfait</h2>
                     <br />
                 <input type="submit" name="submit" value="Rechercher"/> <br/><br/><br/>
 
