@@ -65,16 +65,6 @@ if ($idFicheFrais != NULL) {
                         ?>
                     </select>
 
-                    <script>
-                        // Récupère la balise select et ajoute un écouteur d'événements pour détecter les changements de sélection
-                        var selectElmt = document.getElementById("select-visiteur");
-                        selectElmt.addEventListener("change", function() {
-                            // Met à jour la variable $idvisiteur avec la valeur sélectionnée
-                            var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-                            <?php $idvisiteur = ?> valeurselectionnee;
-                        });
-                    </script>
-
                     <?php
                         $mois_annee = SQLgetval("SELECT annee,mois FROM fichefrais WHERE idVisiteur = '$idvisiteur'");
                     ?>
