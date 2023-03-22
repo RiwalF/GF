@@ -1,6 +1,4 @@
 <?php
-ini_set("display_errors", 1); 
-
 include '../mesFonctionsGenerales.php';
 function SQL($sql){
     $cnxBDD = connexion();
@@ -58,10 +56,6 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                     <br />
                 <input type="submit" name="submit" value="Rechercher"/> <br/><br/><br/>
 
-
-
-
-
             <?php
             if ($idFicheFraisSelec != NULL) {
                 $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'REP'");
@@ -88,6 +82,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                         <input type="radio" value="Valide" name="choix" id = "Valide"></input><label class="boutton" for="Valide">Valide</label>
                         <input type="radio" value="NonValide" name="choix" id = "NonValide"></input><label class="boutton" for="NonValide">Non Valide</label>
                 </tr>
+                <input type="submit" name="submit" value="Rechercher"/>
             </table>
 
             </fieldset class = "orange">
