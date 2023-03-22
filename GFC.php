@@ -51,7 +51,6 @@ if ($tab_id != NULL) {
             <?php
             }
             ?>
-            
         </form>
     </body>
 </html>

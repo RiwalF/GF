@@ -25,9 +25,15 @@ function SQLgetval($sql){
     return $valeur[0];
 }
 
-$an = $_GET['an'];
-$mois = $_GET['mois'];
-$idvisit = $_GET['id'];
+if ($_GET['an'] != NULL) {
+    $an = $_GET['an'];
+}
+if ($_GET['mois'] != NULL) {
+    $mois = $_GET['mois'];
+}
+if ($_GET['id'] != NULL) {
+    $idvisit = $_GET['id'];
+}
 
 $ExisteFichefrais = TRUE;
 $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$mois'AND annee = '$an' AND idVisiteur = '$idvisit'");
