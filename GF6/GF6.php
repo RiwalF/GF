@@ -25,6 +25,7 @@ function SQLgetval($sql){
     return $valeur[0];
 }   
 
+$idFicheFraisSelec = $_GET['idFicheFrais'];
 
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
 
@@ -44,7 +45,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                 <br />
                     <label for="ficheFraisList">Choisir la fiche de frais :</label>
                     <select id="ficheFraisList" name="idFicheFrais">
-                        <option selected disabled>Choisir la fiche de frais</option>
+                        <option selected disabled></option>
                         <?php
                             for ($i = 0; $i < count($tab_id); $i++) {
                             $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '".$tab_id[$i][2]."'AND annee = '".$tab_id[$i][1]."' AND idVisiteur = '".$tab_id[$i][0]."'");
@@ -60,12 +61,15 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
 
 
 
-                
+
             <?php
-                    $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'REP'");
-                    $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'NUI'");
-                    $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'ETP'");
-                    $Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'KM'");
+            if ($idFicheFraisSelec != NULL) {
+                $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'REP'");
+                $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'NUI'");
+                $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'ETP'");
+                $Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'KM'");
+                $ExisteFichefrais = TRUE;
+            }
             ?>
             <table class="titre2" border="1px";>
                 <tr>
