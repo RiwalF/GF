@@ -89,10 +89,6 @@ if ($idFicheFrais != NULL) {
                             }
                         ?>
                     </select>
-
-<pre><label for="choix" class="titre2" > Choisir le visiteur : </label><input style="width: 120px;" list="choix_visiteur" id="id" name="id" value="<?php echo $idvisit;?>"/><br />
-<label for="mois_an" class="titre2" > Mois :                </label><input style="width: 55px;" list="mois" name="mois" value="<?php echo $mois;?>"/> <input style="width: 55px;" list="an" name="an" value="<?php echo $an;?>"/></pre>
-
             <h2 class="titre2">Frais au forfait</h2>
 
             <label><input type="submit" value="Rechercher"/></label></br></br>
@@ -117,37 +113,6 @@ if ($idFicheFrais != NULL) {
             </table>
 
             </fieldset class = "orange">
-
-
-
-
-            <datalist id = "choix_visiteur">
-
-                <?php 
-                
-                for ($i=0; $i < count($tab_id); $i++) { 
-                    echo "<option value='".$tab_id[$i][0]."'><br />\n";
-                }
-
-                ?>
-    
-            </datalist>
-
-            <datalist id = "mois">
-                <?php 
-                for ($i=0; $i < count($tab_id); $i++) { 
-                    echo "<option value='".$tab_id[$i][1]."'><br />\n";
-                }
-                ?>
-            </datalist>
-
-            <datalist id = "an">
-                <?php
-                for ($i=0; $i < count($tab_id); $i++) { 
-                    echo "<option value='".$tab_id[$i][2]."'><br />\n";
-                }
-                ?>
-            </datalist>
         </form>    
     </body>
 </html>
