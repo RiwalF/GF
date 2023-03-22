@@ -20,7 +20,7 @@ ini_set("display_errors", 1);
 
         <fieldset>
             <br/>
-            <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GSB_Connexions.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+            <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='GSB_Connexions.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
             <br/><br/>
             <input type="button" name="lien1" value="Remboursement des frais" onclick="self.location.href='GF6/GF6.php?submit=nothing'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
             <br/><br/>
