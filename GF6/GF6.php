@@ -60,7 +60,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                 <input type="submit" name="submit" value="Rechercher"/> <br/><br/><br/>
 
             <?php
-            if ($idFicheFraisSelec != NULL) {
+            if ($idFicheFraisSelec != 0) {
                 $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'REP'");
                 $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'NUI'");
                 $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFraisSelec' AND idForfait = 'ETP'");
