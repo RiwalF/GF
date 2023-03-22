@@ -26,7 +26,6 @@ function SQLgetval($sql){
 }
 
 
-$ExisteFicheFrais = TRUE;
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
 
 // $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$mois'AND annee = '$an' AND idVisiteur = '$idvisit'");
@@ -57,7 +56,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                         <?php
                             // Parcourir le tableau des visiteurs
                             for ($i=0; $i < count($tab_id); $i++) { 
-                                $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$tab_id[$i][2]'AND annee = '$tab_id[$i][1]' AND idVisiteur = '$tab_id[$i][0]'");
+                                $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '".$tab_id[$i][2]."'AND annee = '".$tab_id[$i][1]."' AND idVisiteur = '".$tab_id[$i][0]."'");
                         ?>                        
                                 <option value="<?php echo $idFicheFrais;?>"><?php echo $tab_id[$i][0]." - ".$tab_id[$i][2]."/"$tab_id[$i][1] ; ?></option>
                         <?php
