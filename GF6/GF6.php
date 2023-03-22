@@ -23,7 +23,7 @@ function SQLgetval($sql){
         or die ("Requete invalide : ".$sql);    
     $valeur = $result->fetch_all(2);
     return $valeur[0];
-}
+}   
 
 
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
@@ -51,19 +51,39 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
         <form name="GF6.php" action="GF6.php" method="get">
             <fieldset class = "orange">
                 <h1 class="titre2">Validation des Frais par visiteur</h1><br/>
-                    <select>
-                        <option selected="selected" name="visiteur" id="visiteur">Choisir la fiche de frais</option>
-                        <?php
-                            // Parcourir le tableau des visiteurs
-                            for ($i=0; $i < count($tab_id); $i++) { 
-                                $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '".$tab_id[$i][2]."'AND annee = '".$tab_id[$i][1]."' AND idVisiteur = '".$tab_id[$i][0]."'");
-                        ?>                        
-                                <option value="<?php echo $idFicheFrais;?>"><?php echo $tab_id[$i][0]." - ".$tab_id[$i][2]."/".$tab_id[$i][1]; ?></option>
-                        <?php
-                            }
-                        ?>
-                    </select>
-                    
+                <select id="ficheFraisList">
+                    <option selected="selected" name="visiteur" id="visiteur">Choisir la fiche de frais</option>
+                    <?php
+                        // Parcourir le tableau des visiteurs
+                        for ($i=0; $i < count($tab_id); $i++) { 
+                            $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '".$tab_id[$i][2]."'AND annee = '".$tab_id[$i][1]."' AND idVisiteur = '".$tab_id[$i][0]."'");
+                    ?>                        
+                            <option value="<?php echo $idFicheFrais;?>"><?php echo $tab_id[$i][0]." - ".$tab_id[$i][2]."/".$tab_id[$i][1]; ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+
+                <script>
+                    // Récupérer l'élément de la liste déroulante
+                    var ficheFraisList = document.getElementById("ficheFraisList");
+
+                    // Ajouter un écouteur d'événements "onchange" à la liste déroulante
+                    ficheFraisList.addEventListener("change", function() {
+                        // Récupérer la valeur de l'option sélectionnée
+                        var selectedOptionValue = ficheFraisList.options[ficheFraisList.selectedIndex].value;
+                        // Utiliser la valeur sélectionnée
+                        if (selectedOptionValue) {
+                            var Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '" + selectedOptionValue + "' AND idForfait = 'REP'");
+                            var Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '" + selectedOptionValue + "' AND idForfait = 'NUI'");
+                            var Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '" + selectedOptionValue + "' AND idForfait = 'ETP'");
+                            var Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '" + selectedOptionValue + "' AND idForfait = 'KM'");        
+                        } else {
+                            var ExisteFichefrais = false;
+                        }
+                    });
+                </script>
+
             <h2 class="titre2">Frais au forfait</h2>
 
             <label><input type="submit" value="Rechercher"/></label></br></br>
