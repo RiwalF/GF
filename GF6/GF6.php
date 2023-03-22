@@ -26,7 +26,7 @@ function SQLgetval($sql){
 }   
 
 $idFicheFraisSelec = $_GET['idFicheFrais'];
-$ExisteFichefrais = FALSE
+$ExisteFichefrais = FALSE;
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
 
 ?>
