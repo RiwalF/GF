@@ -25,17 +25,10 @@ function SQLgetval($sql){
     return $valeur[0];
 }
 
-if ($_GET['an'] != NULL) {
-    $an = $_GET['an'];
-}
-if ($_GET['mois'] != NULL) {
-    $mois = $_GET['mois'];
-}
-if ($_GET['id'] != NULL) {
-    $idvisit = $_GET['id'];
-}
 
-$ExisteFichefrais = TRUE;
+$ExisteFicheFrais = TRUE;
+$tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
+
 $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$mois'AND annee = '$an' AND idVisiteur = '$idvisit'");
 if ($idFicheFrais != NULL) {
     $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'REP'");
@@ -87,6 +80,22 @@ if ($idFicheFrais != NULL) {
             </table>
 
             </fieldset class = "orange">
+
+
+
+            <select>
+      <option selected="selected">Sélectionner une valeur</option>
+      <?php
+      $langages = array("PHP", "Java", "Ada", "HTML", "CSS");
+      
+      // Parcourir le tableau des langues
+      foreach($langages as $value){
+      ?>
+      <option value="<?php echo strtolower($value); ?>"><?php echo $value; ?></option>
+      <?php
+      }
+      ?>
+    </select>
 
             <datalist id = "choix_visiteur">
 
