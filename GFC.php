@@ -19,6 +19,7 @@ try {
     $mois = $tab_id[2];   
 } catch (\Throwable $th) {
     $ExisteFicheFrais = FALSE;
+    echo "test";
 }
 
 ?>
