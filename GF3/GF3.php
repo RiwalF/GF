@@ -98,7 +98,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
                     </th>
 
                     <?php                   
-                        if ($idEtat==SQLgetval("SELECT libelle FROM etat WHERE id = 'CR';"))
+                        if ($idEtat==SQLgetval("SELECT libelle FROM etat WHERE id = 'CR'"))
                         {
                     ?>
 
