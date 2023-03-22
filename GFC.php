@@ -11,10 +11,15 @@ function SQLget($sql){
     return $valeur;
 }
 
+$ExisteFicheFrais = TRUE;
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
-$id = $tab_id[0];
-$annee = $tab_id[1];
-$mois = $tab_id[2];
+try {
+    $id = $tab_id[0];
+    $annee = $tab_id[1];
+    $mois = $tab_id[2];   
+} catch (\Throwable $th) {
+    $ExisteFicheFrais = FALSE;
+}
 
 ?>
 
