@@ -23,6 +23,7 @@ function SQLgetval($sql){
     return $valeur[0];
 }   
 
+$idFicheFraisSelec = 0;
 if ($_GET['submit'] == "Rechercher") {
     $idFicheFraisSelec = $_GET['idFicheFrais'];
 }
