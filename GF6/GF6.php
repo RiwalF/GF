@@ -76,7 +76,7 @@ if ($idFicheFrais != NULL) {
                     <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php if ($ExisteFichefrais){echo "$Km[0]";}else{echo "Pas de valeur";}?></td></tr> </table></td>
                     <td align="center" width="170px"; height="70px">
                         <input type="radio" value="Valide" name="choix" id = "Valide"></input><label class="boutton" for="Valide">Valide</label>
-                        <input type="radio" value="Non Valide" name="choix" id = "Non Valide"></input><label class="boutton" for="Non Valide">Non Valide</label>
+                        <input type="radio" value="NonValide" name="choix" id = "NonValide"></input><label class="boutton" for="NonValide">Non Valide</label>
                 </tr>
             </table>
 
@@ -120,7 +120,7 @@ $choix = $_GET['choix'];
 
 if ($choix == 'Valide') {
     SQL("UPDATE fichefrais SET idEtat = 'VA' WHERE id = '$idFicheFrais[0]';");
-} elseif ($choix == 'Non Valide') {
+} elseif ($choix == 'NonValide') {
     SQL("UPDATE fichefrais SET idEtat = 'CR' WHERE id = '$idFicheFrais[0]';");
 }
 ?>

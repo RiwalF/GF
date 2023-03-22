@@ -30,7 +30,7 @@ if ($tab_id != NULL) {
 
     </head>    
     <body>  
-        <form action="GF6/GF6.php" method="get">  
+        <form action="GF6/GF6.php?choix=other" method="get">  
             <table>
                 <tr>
                     <th><h1 class="titre">Redirection</h1></th>
