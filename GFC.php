@@ -19,6 +19,7 @@ ini_set("display_errors", 1);
         </table>
 
         <fieldset>
+            <br/>
             <input type="button" name="lien1" value="Remboursement des frais" onclick="self.location.href='GF6/GF6.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
             <br/><br/>
             <input type="button" name="lien2" value="Mettre en paiement" onclick="self.location.href='GF7/GF7.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
