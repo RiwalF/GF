@@ -13,7 +13,7 @@ function SQLget($sql){
 
 $ExisteFicheFrais = TRUE;
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
-if (existe($tab_id[0])) {
+if ($tab_id[0] != NULL) {
     $id = $tab_id[0];
     $annee = $tab_id[1];
     $mois = $tab_id[2];   
