@@ -41,9 +41,8 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
             <fieldset class="orange">
                 <h1 class="titre2">Validation des Frais par visiteur</h1>
                 <br />
-                    <label for="ficheFraisList">Choisir la fiche de frais :</label>
                     <select id="ficheFraisList" name="idFicheFrais">
-                        <option selected disabled></option>
+                        <option selected disabled>Choisir la fiche de frais :</option>
                         <?php
                             for ($i = 0; $i < count($tab_id); $i++) {
                             $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '".$tab_id[$i][2]."'AND annee = '".$tab_id[$i][1]."' AND idVisiteur = '".$tab_id[$i][0]."'");
@@ -82,8 +81,8 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                         <input type="radio" value="Valide" name="choix" id = "Valide"></input><label class="boutton" for="Valide">Valide</label>
                         <input type="radio" value="NonValide" name="choix" id = "NonValide"></input><label class="boutton" for="NonValide">Non Valide</label>
                 </tr>
-                <input type="submit" name="submit" value="Rechercher"/>
             </table>
+            <input type="submit" name="submit" value="Valider"/>
 
             </fieldset class = "orange">
         </form>    
