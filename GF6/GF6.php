@@ -29,15 +29,15 @@ function SQLgetval($sql){
 $ExisteFicheFrais = TRUE;
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
 
-$idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$mois'AND annee = '$an' AND idVisiteur = '$idvisit'");
-if ($idFicheFrais != NULL) {
-    $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'REP'");
-    $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'NUI'");
-    $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'ETP'");
-    $Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'KM'");        
-}else{
-    $ExisteFichefrais = FALSE;
-}
+// $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$mois'AND annee = '$an' AND idVisiteur = '$idvisit'");
+// if ($idFicheFrais != NULL) {
+//     $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'REP'");
+//     $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'NUI'");
+//     $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'ETP'");
+//     $Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idFicheFrais = '$idFicheFrais[0]' AND idForfait = 'KM'");        
+// }else{
+//     $ExisteFichefrais = FALSE;
+// }
 
 ?>
 
@@ -51,45 +51,20 @@ if ($idFicheFrais != NULL) {
     <body>  
         <form name="GF6.php" action="GF6.php" method="get">
             <fieldset class = "orange">
-                <h1 class="titre2">Validation des Frais par visiteur</h1><br />
-
-                    <select id="select-visiteur">
-                        <option selected="selected" name="visiteur" id="visiteur">Choisir le visiteur</option>
+                <h1 class="titre2">Validation des Frais par visiteur</h1><br/>
+                    <select>
+                        <option selected="selected" name="visiteur" id="visiteur">Choisir la fiche de frais</option>
                         <?php
                             // Parcourir le tableau des visiteurs
                             for ($i=0; $i < count($tab_id); $i++) { 
-                        ?>
-                                <option value="<?php echo strtolower($tab_id[$i][0]); ?>"><?php echo $tab_id[$i][0]; ?></option>
+                                $idFicheFrais = SQLgetval("SELECT id FROM fichefrais WHERE mois = '$tab_id[$i][2]'AND annee = '$tab_id[$i][1]' AND idVisiteur = '$tab_id[$i][0]'");
+                        ?>                        
+                                <option value="<?php echo $idFicheFrais;?>"><?php echo $tab_id[$i][0]." - ".$tab_id[$i][2]."/"$tab_id[$i][1] ; ?></option>
                         <?php
                             }
                         ?>
                     </select>
-
-                    <?php
-                        $mois_annee = SQLgetval("SELECT annee,mois FROM fichefrais WHERE idVisiteur = '$idvisiteur'");
-                    ?>
-
-                    <select>
-                        <option selected="selected">Mois</option>
-                        <?php
-                            for ($i=0; $i < count($tab_id); $i++) { 
-                        ?>
-                                <option value="<?php echo strtolower($mois_annee[1]); ?>"><?php echo $mois_annee[1]; ?></option>
-                        <?php
-                            }
-                        ?>
-                    </select>
-
-                    <select>
-                        <option selected="selected">Année</option>
-                        <?php
-                            for ($i=0; $i < count($tab_id); $i++) { 
-                        ?>
-                                <option value="<?php echo strtolower($mois_annee[0]); ?>"><?php echo $mois_annee[0]; ?></option>
-                        <?php
-                            }
-                        ?>
-                    </select>
+                    
             <h2 class="titre2">Frais au forfait</h2>
 
             <label><input type="submit" value="Rechercher"/></label></br></br>
