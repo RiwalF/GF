@@ -22,11 +22,11 @@ function SQLgetval($sql){
     $valeur = $result->fetch_all(2);
     return $valeur[0];
 }   
-try {
+
+if ($_GET['submit'] == "Rechercher") {
     $idFicheFraisSelec = $_GET['idFicheFrais'];
-} catch (\Throwable $th) {
-    //throw $th;
 }
+
 
 $ExisteFichefrais = FALSE;
 $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat='CL';");
@@ -94,11 +94,11 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
 </html>
 
 <?php
-try {
+$choix = "";
+if ($_GET['submit'] == 'Valider') {
     $choix = $_GET['choix'];
-} catch (\Throwable $th) {
-    //throw $th;
-}
+} 
+
 
 if ($choix == 'Valide') {
     SQL("UPDATE fichefrais SET idEtat = 'VA' WHERE id = '$idFicheFrais[0]';");
