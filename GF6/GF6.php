@@ -70,10 +70,10 @@ if ($idFicheFrais != NULL) {
                     <td align="center" width="90px"; height="30px">Situation</td>
                 </tr>
                 <tr>
-                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php echo "$Repas[0]";?></td></tr> </table></td>
-                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php echo "$Nuit[0]";?></td></tr> </table></td>
-                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php echo "$Etape[0]";?></td></tr> </table></td>
-                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php echo "$Km[0]";?></td></tr> </table></td>
+                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php if ($ExisteFichefrais){echo "$Repas[0]";}else{echo "Pas de valeur";}?></td></tr> </table></td>
+                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php if ($ExisteFichefrais){echo "$Nuit[0]";}else{echo "Pas de valeur";}?></td></tr> </table></td>
+                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php if ($ExisteFichefrais){echo "$Etape[0]";}else{echo "Pas de valeur";}?></td></tr> </table></td>
+                    <td align="center" width="90px"; height="70px"><table class="titre2" border="1px";> <tr><td width="40px"; height="10px"><?php if ($ExisteFichefrais){echo "$Km[0]";}else{echo "Pas de valeur";}?></td></tr> </table></td>
                     <td align="center" width="170px"; height="70px">
                         <input type="radio" value="Valide" name="choix" id = "Valide"></input><label class="boutton" for="Valide">Valide</label>
                         <input type="radio" value="Non Valide" name="choix" id = "Non Valide"></input><label class="boutton" for="Non Valide">Non Valide</label>
