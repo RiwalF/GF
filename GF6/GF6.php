@@ -47,7 +47,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                 <h1 class="titre2">Validation des Frais des visiteur</h1>
                     <br/>
                     <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GFC.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
-                    <br/><br/>
+                    <br/>
                 <br />
                     <select id="ficheFraisList" name="idFicheFrais">
                         <option selected disabled>Choisir la fiche de frais :</option>
