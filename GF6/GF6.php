@@ -38,7 +38,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
     <head>
         <title>Suivi de remboursement des Frais</title>
         <meta charset="utf-8">
-		<link type="text/css" rel="stylesheet" href="../GF4/GF4.css" />
+		<link type="text/css" rel="stylesheet" href="GF6.css" />
 
     </head>    
     <body>
