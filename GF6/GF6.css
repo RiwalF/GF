@@ -104,4 +104,9 @@ select {
     border-color: #006699;
     box-shadow: 0 0 5px rgba(0, 102, 153, 0.5);
   }
-  
+
+  button.back-button {
+    background-color: rgb(241, 82, 82);
+    color: white;
+    border: 2px solid red;
+  }
