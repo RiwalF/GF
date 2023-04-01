@@ -58,6 +58,7 @@ fieldset.orange {
 }
 table {
     border-collapse: collapse;
+    border: 2px solid rgba(0, 0, 0, 0.623);
     width: 100%;
     font-family: Arial, sans-serif;
     font-size: 14px;
