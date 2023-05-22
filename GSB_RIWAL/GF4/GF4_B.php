@@ -102,10 +102,9 @@ if (gettype($verif) != "array"){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>formulaire de paiement</title>
-        <meta charset='utf-8'>
+        <title>Formulaire de paiement</title>
+        <meta charset="utf-8">
 		<link type="text/css" rel="stylesheet" href="../GF.css"/>
-
     </head>    
     <body>
         <form name="GF4" action="../GF3/GF3.php" method="get">
