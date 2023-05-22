@@ -99,36 +99,35 @@ if (gettype($verif) != "array"){
 
 ?>
 
-<!DOCTYPE html>
+
+
+
 <html>
     <head>
         <title>Formulaire de paiement</title>
-        <meta charset="utf-8">
-        <link type="text/css" rel="stylesheet" href="../GF.css"/>
+        <meta charset='utf-8'>
+        <link type='text/css' rel='stylesheet' href='../GF.css' />
     </head>    
-    <body>
-        <form name="GF4" action="../GF3/GF3.php" method="get">
-            <fieldset class="orange">
-                <h1 class='titre2'>Gestion des Frais</h1>
-                <h3>Repas : <?php echo $Repas_total; ?> €</h3>
-                <h3>Nuitées : <?php echo $Nuit_total; ?> €</h3>
-                <h3>Etape : <?php echo $Etape_total; ?> €</h3>
-                <h3>Km : <?php echo $Km_total; ?> €</h3>
-                <h2>Total : <?php echo $Total." € en ".$Mois."/".$Annee; ?></h2>
-                <h2><?php echo $requete; ?><h2>
+    <body>  
+
+    <form name="GF4" action="../GF3/GF3.php" method="get">
+            <fieldset>
+                <h1 class='titre'>Gestion des Frais</h1>
+                <p>Repas : <?php echo $Repas_total; ?> €</p>
+                <p>Nuitées : <?php echo $Nuit_total; ?> €</p>
+                <p>Etape : <?php echo $Etape_total; ?> €</p>
+                <p>Km : <?php echo $Km_total; ?> €</p>
+                <p>Total : <?php echo $Total." € en ".$Mois."/".$Annee; ?></p>
+                <p><?php echo $requete; ?><p>
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
 			    </div>
             </fieldset>
-            <div class="alert" id="alert-box">
-                <div class="ball"></div>
-            </div>
-            <script src="../script.js"></script>
             <input id="id" name="id" type="hidden" value="<?php echo $idVisiteur; ?>">
         </form>
-        
-        
-        
-        
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
     </body>
 </html>
