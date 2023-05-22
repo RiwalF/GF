@@ -128,3 +128,10 @@ input[type="text"]:focus {
     border-color: #006699;
     box-shadow: 0 0 5px rgba(0, 102, 153, 0.5);
 }
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
