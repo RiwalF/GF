@@ -20,7 +20,7 @@ function hiddenAlert() {
 function resetTimer() {
     hiddenAlert();
     clearTimeout(timer);
-    timer = setTimeout(showAlert, 5000); // 5000 millisecondes = 5 secondes
+    timer = setTimeout(showAlert, 15000); // 5000 millisecondes = 5 secondes
 }
 
 // Événement de mouvement de la souris
