@@ -74,7 +74,7 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
                 </table>
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
-			    </div></br>
+			    </div>
                 </fieldset>
 
                 <input id="id" name="id" type="hidden" value="<?php echo $id; ?>">
