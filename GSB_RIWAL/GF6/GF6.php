@@ -91,7 +91,11 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
             <input type="submit" name="submit" value="Valider"/><br/><br/>
 
             </fieldset class = "orange">
-        </form>    
+        </form> 
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>   
     </body>
 </html>
 

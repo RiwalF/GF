@@ -48,5 +48,9 @@ $IDENTIFIANT = $_GET["id"];
             </fieldset>
             <input id="id" name="id" type="hidden" value="<?php echo $IDENTIFIANT; ?>">
         </form>    
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
     </body>
 </html>

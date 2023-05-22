@@ -88,5 +88,9 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
                 <input id="id" name="id" type="hidden" value="<?php echo $id; ?>">
             </ul>
         </form>    
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
     </body>
 </html>

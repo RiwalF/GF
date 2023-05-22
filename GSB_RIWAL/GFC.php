@@ -21,5 +21,9 @@ ini_set("display_errors", 1);
             <input type="button" name="lien2" value="Mettre en paiement" onclick="self.location.href='GF7/GF7.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
             <br/>
         </fieldset>
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>

@@ -12,5 +12,11 @@
                 <label for="id" class="titre2">Identifiant : </label><input type="text" id="id" name="id" placeholder="AAAA" class="my-text-input" />
             </fieldset>
         </form>    
+
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="script.js"></script>
+
     </body>
 </html>

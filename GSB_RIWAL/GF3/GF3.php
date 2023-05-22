@@ -141,6 +141,12 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
             </tbody>
         </table>
+
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
+
     </body>
 </html>
 

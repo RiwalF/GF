@@ -96,5 +96,9 @@ $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI
             <input id="id" name="id" type="hidden" value="<?php echo $id; ?>">
             <input id="idFichefrais" name="idFichefrais" type="hidden" value="<?php echo $idFichefrais; ?>">
         </form>    
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
     </body>
 </html>

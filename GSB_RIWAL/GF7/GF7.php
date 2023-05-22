@@ -51,6 +51,10 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
             </div>
 
         </form>
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
 
     </body>
 

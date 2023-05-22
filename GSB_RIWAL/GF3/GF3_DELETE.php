@@ -72,6 +72,10 @@ SQL("DELETE FROM fichefrais WHERE idVisiteur='$id' AND mois='$mois' AND annee='$
             </div>
 
         </form>
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
 
     </body>
 

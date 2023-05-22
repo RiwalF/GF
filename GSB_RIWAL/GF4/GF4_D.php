@@ -116,5 +116,9 @@ SQL("UPDATE lignefraisforfait SET quantite='$Km' WHERE idFicheFrais='$idFichefra
             </fieldset>
             <input id="id" name="id" type="hidden" value="<?php echo $idVisiteur; ?>">
         </form>
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>
     </body>
 </html>
