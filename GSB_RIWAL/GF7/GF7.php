@@ -31,7 +31,7 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
             <head>
                 <title>Connexion au Formulaire de paiement</title>
                 <meta charset='utf-8'>
-                <link type='text/css' rel='stylesheet' href='GF.css' />
+                <link type='text/css' rel='stylesheet' href='../GF.css' />
 
             </head>    
             <body>  
