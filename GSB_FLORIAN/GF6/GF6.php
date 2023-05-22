@@ -38,7 +38,7 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
     <head>
         <title>Suivi de remboursement des Frais</title>
         <meta charset="utf-8">
-		<link type="text/css" rel="stylesheet" href="GF6.css" />
+		<link type="text/css" rel="stylesheet" href="../GF.css" />
 
     </head>    
     <body>
@@ -88,10 +88,14 @@ $tab_id = SQLget("SELECT DISTINCT visiteur.id,annee,mois FROM visiteur,fichefrai
                         <input type="radio" value="NonValide" name="choix" id = "NonValide"></input><label class="boutton" for="NonValide">Non Valide</label>
                 </tr>
             </table>
-            <input type="submit" name="submit" value="Valider"/><br/><br/>
+            <input type="submit" name="submit" value="Soumettre"/>
 
             </fieldset class = "orange">
-        </form>    
+        </form> 
+        <div class="alert" id="alert-box">
+            <div class="ball"></div>
+        </div>
+        <script src="../script.js"></script>   
     </body>
 </html>
 
@@ -105,7 +109,7 @@ if ($_GET['submit'] == 'Valider') {
 if ($choix == 'Valide') {
     SQL("UPDATE fichefrais SET idEtat = 'VA' WHERE id = '$idFicheFrais[0]';");
 } elseif ($choix == 'NonValide') {
-    SQL("UPDATE fichefrais SET idEtat = 'CR' WHERE id = '$idFicheFrais[0]';");
+    SQL("UPDATE fichefrais SET idEtat = 'NV' WHERE id = '$idFicheFrais[0]';");
 }
 ?>
 
