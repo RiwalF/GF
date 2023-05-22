@@ -37,7 +37,7 @@ if (gettype($statut_C) == "array" ){
                 </div>
                 <script src='../script.js'></script>
             </body>
-        </html>";
+          </html>";
 }
 
 
