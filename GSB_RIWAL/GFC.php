@@ -13,7 +13,7 @@ ini_set("display_errors", 1);
     <body>  
         <table>
             <tr>
-                <th><h1 class="titre">Redirection</h1></th>
+                <th><h1 class="titre2">Redirection</h1></th>
             </tr>
         </table>
 
