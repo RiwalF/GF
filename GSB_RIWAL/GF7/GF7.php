@@ -29,15 +29,14 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
 
         <html>
             <head>
-                <title>Connexion au Formulaire de paiement</title>
+                <title>Mise en paiement</title>
                 <meta charset='utf-8'>
                 <link type='text/css' rel='stylesheet' href='../GF.css' />
 
             </head>    
             <body>  
-                <fieldset class = "orange">
-                    <h1 class='titre2'>Toutes les fiches de frais à l’état "Validée" ont été mises en
-        paiement et sont passées à l’état "Remboursée</h1>
+                <fieldset>
+                    <h1 class='titre'>Toutes les fiches de frais à l’état "Validée" ont été mises en paiement et sont passées à l’état "Remboursée"</h1>
                 </fieldset>
                 <div class="alert" id="alert-box">
                     <div class="ball"></div>

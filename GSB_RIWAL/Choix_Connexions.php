@@ -32,6 +32,10 @@ if (gettype($statut_C) == "array" ){
                 <fieldset>
                     <h1 class='titre'>Erreur de connexion veuillez réessayer</h1>
                 </fieldset>
+                <div class='alert' id='alert-box'>
+                <div class='ball'></div>
+                </div>
+                <script src='../script.js'></script>
             </body>
         </html>";
 }
