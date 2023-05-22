@@ -35,8 +35,8 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
 
             </head>    
             <body>  
-                <fieldset>
-                    <h1 class='titre'>Toutes les fiches de frais à l’état "Validée" ont été mises en
+                <fieldset class = "orange">
+                    <h1 class='titre2'>Toutes les fiches de frais à l’état "Validée" ont été mises en
         paiement et sont passées à l’état "Remboursée</h1>
                 </fieldset>
                 <div class="alert" id="alert-box">
