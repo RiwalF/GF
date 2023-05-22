@@ -87,24 +87,22 @@ SQL("UPDATE lignefraisforfait SET quantite='$Km' WHERE idFicheFrais='$idFichefra
 
 ?>
 
-<!DOCTYPE html>
 <html>
     <head>
-        <title>formulaire de paiement</title>
+        <title>Formulaire de paiement</title>
         <meta charset='utf-8'>
-		<link type="text/css" rel="stylesheet" href="../GF.css"/>
-
+        <link type='text/css' rel='stylesheet' href='../GF.css' />
     </head>    
-    <body>
-        <form name="GF4" action="../GF3/GF3.php" method="get">
+    <body>  
 
+        <form name="GF4" action="../GF3/GF3.php" method="get">
             <fieldset class="orange">
-            <h1 class='titre2'>Gestion des Frais</h1>
-                <h3>Repas : <?php echo $Repas_total; ?> €</h3>
-                <h3>Nuitées : <?php echo $Nuit_total; ?> €</h3>
-                <h3>Etape : <?php echo $Etape_total; ?> €</h3>
-                <h3>Km : <?php echo $Km_total; ?> €</h3>
-                <h2>Total : <?php echo "$Total € en $Mois/$Annee" ?></h2>
+                <h1 class='titre'>Gestion des Frais</h1>
+                <p>Repas : <?php echo $Repas_total; ?> €</p>
+                <p>Nuitées : <?php echo $Nuit_total; ?> €</p>
+                <p>Etape : <?php echo $Etape_total; ?> €</p>
+                <p>Km : <?php echo $Km_total; ?> €</p>
+                <p>Total : <?php echo "$Total € en $Mois/$Annee" ?></p>
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
 			    </div>

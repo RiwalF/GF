@@ -110,8 +110,8 @@ if (gettype($verif) != "array"){
     </head>    
     <body>  
 
-    <form name="GF4" action="../GF3/GF3.php" method="get">
-            <fieldset>
+        <form name="GF4" action="../GF3/GF3.php" method="get">
+            <fieldset class="orange">
                 <h1 class='titre'>Gestion des Frais</h1>
                 <p>Repas : <?php echo $Repas_total; ?> €</p>
                 <p>Nuitées : <?php echo $Nuit_total; ?> €</p>
