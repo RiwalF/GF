@@ -36,6 +36,8 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
     <body>  
         <form name="GF4" action="../GF3/GF3.php" method="get">
 
+
+        <fieldset>
         <h1 class="titre2">Suivi de remboursement des Frais</h1>
                 <label><strong>Fiche de frais de : <?php echo strtoupper($nom_prenom[0]).strtoupper($nom_prenom[1]) ?></strong></label>
 
@@ -70,12 +72,13 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
                     <td align="right" width="90px"; height="70px"><?php echo $tab[5]."€"; ?></td>   
                     </tr>
                 </table>
-
+                </fieldset>
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
 			    </div></br>
                 <input id="id" name="id" type="hidden" value="<?php echo $id; ?>">
             </ul>
+            
         </form>    
         <div class="alert" id="alert-box">
             <div class="ball"></div>
