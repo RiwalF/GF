@@ -4,9 +4,9 @@
   <style>
     @keyframes dvdAnimation {
       0%   { top: 0px; left: 0px; }
-      25%  { top: 0px; left: 100%; }
-      50%  { top: 100%; left: 100%; }
-      75%  { top: 100%; left: 0px; }
+      25%  { top: 0px; left: calc(100% - 100px); }
+      50%  { top: calc(100% - 100px); left: calc(100% - 100px); }
+      75%  { top: calc(100% - 100px); left: 0px; }
       100% { top: 0px; left: 0px; }
     }
     
