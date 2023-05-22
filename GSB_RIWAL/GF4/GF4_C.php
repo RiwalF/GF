@@ -64,7 +64,7 @@ $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI
                 <fieldset class="orange">
                 <h1 class="titre2">Gestion des Frais</h1>
                 <br/>
-                <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GF3/GF3.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+                <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GF3/GF3.php'<?php echo '?id='.$id;?>" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
                 <br/><br/>
                 <div>
                     <pre>
