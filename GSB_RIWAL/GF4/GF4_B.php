@@ -114,17 +114,21 @@ if (gettype($verif) != "array"){
                 <h3>Nuitées : <?php echo $Nuit_total; ?> €</h3>
                 <h3>Etape : <?php echo $Etape_total; ?> €</h3>
                 <h3>Km : <?php echo $Km_total; ?> €</h3>
-                <h2>Total : <?php echo "$Total € en $Mois/$Annee" ?></h2>
+                <h2>Total : <?php echo $Total." € en ".$Mois."/".$Annee; ?></h2>
                 <h2><?php echo $requete; ?><h2>
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
 			    </div>
             </fieldset>
+            <div class="alert" id="alert-box">
+                <div class="ball"></div>
+            </div>
+            <script src="../script.js"></script>
             <input id="id" name="id" type="hidden" value="<?php echo $idVisiteur; ?>">
         </form>
-        <div class="alert" id="alert-box">
-            <div class="ball"></div>
-        </div>
-        <script src="../script.js"></script>
+        
+        
+        
+        
     </body>
 </html>
