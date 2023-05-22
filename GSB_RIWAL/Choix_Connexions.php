@@ -12,6 +12,13 @@ function SQLget($sql){
     return $valeur;
 }
 
+$fiche_cloture = SQLget("SELECT `id`, `idEtat` FROM `fichefrais` WHERE idEtat = 'CR';");
+var_dump($fiche_cloture);
+for ($i=0; $i < ; $i++) { 
+    # code...
+}
+
+
 $statut_C = SQLget("SELECT * FROM `comptable` WHERE `Comptable_id` = '$id';");
 $statut_V = SQLget("SELECT * FROM `visiteur` WHERE `id` = '$id';");
 
