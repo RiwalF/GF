@@ -30,7 +30,7 @@ function SQLobject($sql)
 $annee_du_jour = date("Y")-2000;
 $mois_du_jour = date("m");
 $fiche_cloture = SQLobject("SELECT `id`, `idEtat`, `mois`, `annee` FROM `fichefrais` WHERE idEtat = 'CR';");
-foreach ($fichesfrais as $key => $fiche) {
+foreach ($fiche_cloture as $key => $fiche) {
     if ($fiche[3] < $annee_du_jour) {
         SQL("UPDATE `fichefrais`
             SET `idEtat` = 'CL'
@@ -39,7 +39,7 @@ foreach ($fichesfrais as $key => $fiche) {
         if ($fiche[2] < $mois_du_jour) {
             SQL("UPDATE `fichefrais`
             SET `idEtat` = 'CL'
-            WHERE `id` = ".$fiche[0].";");
+            WHERE `id` = '".$fiche[0]."';");
         }
     }
 }
