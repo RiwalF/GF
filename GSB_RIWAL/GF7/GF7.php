@@ -32,7 +32,7 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
     <head lang=fr>
 
         <meta charset="utf-8">
-		<link type="text/css" rel="stylesheet" href="../GF4/GF4.css" />
+		<link type="text/css" rel="stylesheet" href="../GF.css" />
         <title>Action réalisée avec succès</title>
 
     </head>
