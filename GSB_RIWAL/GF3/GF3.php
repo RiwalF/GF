@@ -105,13 +105,13 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                     <th title="Supprimer">
                             <a href="GF3_DELETE.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
-                                <img class="pictureCenter" src="../poubelle.jpg" width="30px">
+                                <img class="pictureCenter" src="../images/poubelle.png" width="30px">
                             </a>
                     </th>
 
                     <th title="Modifier">
                             <a href="../GF4/GF4_C.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
-                                <img class="pictureCenter" src="crayon.jpg" width="30px">
+                                <img class="pictureCenter" src="../images/crayon.png" width="30px">
                             </a>
                     </th>
 
@@ -128,7 +128,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                     <th title="Voir">
                         <a href="../GF5/GF5.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
-                            <img class="pictureCenter" src="oeil.png" width="30px">
+                            <img class="pictureCenter" src="../images/oeil.png" width="30px">
                         </a>
                     </th>
 

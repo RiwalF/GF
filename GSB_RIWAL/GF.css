@@ -167,7 +167,7 @@ label {
 .ball {
     width: var(--width);
     height: var(--height);
-    background: url('dvd.png');
+    background: url('images/dvd.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
