@@ -11,13 +11,8 @@ ini_set("display_errors", 1);
 
     </head>    
     <body>  
-        <table>
-            <tr>
-                <th><h1 class="titre2">Redirection</h1></th>
-            </tr>
-        </table>
-
         <fieldset>
+            <h1 class="titre2">Redirection</h1>
             <br/>
             <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='GSB_Connexions.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
             <br/><br/>
