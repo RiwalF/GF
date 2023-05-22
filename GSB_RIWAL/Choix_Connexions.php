@@ -3,6 +3,8 @@ ini_set("display_errors", 1);
 include 'mesFonctionsGenerales.php';
 
 $id = $_GET["id"];
+$mdp = $_GET["mdp"];
+
 function SQL($sql)
 {
     $cnxBDD = connexion();
@@ -45,8 +47,8 @@ foreach ($fiche_cloture as $key => $fiche) {
 }
 
 
-$statut_C = SQLget("SELECT * FROM `comptable` WHERE `Comptable_id` = '$id';");
-$statut_V = SQLget("SELECT * FROM `visiteur` WHERE `id` = '$id';");
+$statut_C = SQLget("SELECT * FROM `comptable` WHERE `Comptable_id` = '$id' AND `MDP` = '$mdp';");
+$statut_V = SQLget("SELECT * FROM `visiteur` WHERE `id` = '$id' AND `MDP` = '$mdp';");
 
 if (gettype($statut_C) == "array" ){
     header('Location: GFC.php');
