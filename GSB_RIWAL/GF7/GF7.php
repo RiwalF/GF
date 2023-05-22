@@ -25,23 +25,21 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
 
 ?>
 
-<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connexion au Formulaire de paiement</title>
+        <meta charset='utf-8'>
+        <link type='text/css' rel='stylesheet' href='GF.css' />
 
-        <html>
-            <head>
-                <title>Mise en paiement</title>
-                <meta charset='utf-8'>
-                <link type='text/css' rel='stylesheet' href='../GF.css' />
-
-            </head>    
-            <body>  
-                <fieldset>
-                    <h1 class='titre'>Toutes les fiches de frais à l’état "Validée" ont été mises en paiement et sont passées à l’état "Remboursée"</h1>
-                </fieldset>
-                <div class="alert" id="alert-box">
-                    <div class="ball"></div>
-                </div>
-                <script src="../script.js"></script>
-            </body>
-        </html>
+    </head>    
+    <body>  
+        <fieldset>
+            <h1 class='titre'>Erreur de connexion veuillez réessayer</h1>
+        </fieldset>
+        <div class='alert' id='alert-box'>
+            <div class='ball'></div>
+        </div>
+        <script src='../script.js'></script>
+    </body>
+</html>";
 
