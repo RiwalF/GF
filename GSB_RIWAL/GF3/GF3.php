@@ -105,13 +105,13 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                     <th title="Supprimer">
                             <a href="GF3_DELETE.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
-                                <img class="pictureCenter" src="https://us.123rf.com/450wm/oliveradesign/oliveradesign1812/oliveradesign181200007/126817569-ic%C3%B4ne-ouverte-poubelle-isol%C3%A9-sur-fond-blanc-illustration-vectorielle-.jpg?ver=6" width="30px">
+                                <img class="pictureCenter" src="../poubelle.jpg" width="30px">
                             </a>
                     </th>
 
                     <th title="Modifier">
                             <a href="../GF4/GF4_C.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
-                                <img class="pictureCenter" src="https://us.123rf.com/450wm/alekseyvanin/alekseyvanin1708/alekseyvanin170800346/83846475-document-avec-stylo-ic%C3%B4ne-de-contour-rempli-signe-de-vecteur-ligne-pictogramme-color%C3%A9-lin%C3%A9aire-isol%C3%A9.jpg" width="30px">
+                                <img class="pictureCenter" src="crayon.jpg" width="30px">
                             </a>
                     </th>
 
@@ -128,7 +128,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                     <th title="Voir">
                         <a href="../GF5/GF5.php?id=<?php echo $id;?>&mois=<?php echo $mois;?>&annee=<?php echo $annee;?>">
-                            <img class="pictureCenter" src="https://us.123rf.com/450wm/alekseyvanin/alekseyvanin1704/alekseyvanin170401467/75473998-vecteur-d-ic%C3%B4ne-oeil-illustration-de-logo-solide-vision-pictogramme-isol%C3%A9-sur-blanc.jpg?ver=6" width="30px">
+                            <img class="pictureCenter" src="oeil.png" width="30px">
                         </a>
                     </th>
 
