@@ -100,7 +100,6 @@ SQL("UPDATE lignefraisforfait SET quantite='$Km' WHERE idFicheFrais='$idFichefra
             <table>
                 <tr>
                     <th><h1 class='titre'>Gestion des Frais</h1></th>
-                    <th style='margin: 300px;'><img src='GSB.jpg'></th>
                 </tr>
             </table>
             <fieldset>

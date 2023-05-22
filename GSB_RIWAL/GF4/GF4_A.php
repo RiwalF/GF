@@ -16,7 +16,6 @@ $IDENTIFIANT = $_GET["id"];
             <table>
                 <tr>
                     <th><h1 class="titre">Gestion des Frais</h1></th>
-                    <th><img src="GSB.jpg"></th>
                 </tr>
             </table>
 

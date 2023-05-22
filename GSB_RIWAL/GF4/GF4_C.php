@@ -63,7 +63,6 @@ $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI
             <table>
                 <tr>
                     <th><h1 class="titre">Gestion des Frais</h1></th>
-                    <th><img src="GSB.jpg"></th>
                 </tr>
             </table>
 

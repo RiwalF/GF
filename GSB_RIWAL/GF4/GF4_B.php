@@ -112,7 +112,6 @@ if (gettype($verif) != "array"){
             <table>
                 <tr>
                     <th><h1 class='titre'>Gestion des Frais</h1></th>
-                    <th style='margin: 300px;'><img src='GSB.jpg'></th>
                 </tr>
             </table>
             <fieldset>
