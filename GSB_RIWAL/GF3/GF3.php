@@ -54,11 +54,10 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
     </head>
 
     <body>
-
+        <fieldset class="orange">
         <table>
             <tr>
                 <th><h1 class="titre">Fiche Frais</h1></th>
-                <th><img src="../GF4/GSB.jpg"></th>
             </tr>
         </table>
         <br/>
@@ -141,7 +140,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
             </tbody>
         </table>
-
+        </fieldset>
         <div class="alert" id="alert-box">
             <div class="ball"></div>
         </div>
