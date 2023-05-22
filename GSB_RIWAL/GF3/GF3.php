@@ -84,7 +84,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
 
             <?php                
-            $fichefrais = SQLobject("SELECT * FROM `fichefrais` WHERE `idVisiteur`= '$id' ORDER BY fichefrais.annee, fichefrais.mois ASC;");
+            $fichefrais = SQLobject("SELECT * FROM `fichefrais` WHERE `idVisiteur`= '$id' ORDER BY fichefrais.annee DESC, fichefrais.mois DESC;");
 
             for ($i=0; $i < count($fichefrais); $i++) 
             {   
