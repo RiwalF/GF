@@ -7,7 +7,7 @@
     </head>    
     <body>  
         <form name="GF4/GF4.php" action="Choix_Connexions.php" method="get">
-            <fieldset>
+            <fieldset class="orange">
                 <h1 class="titre2">Connexion</h1>
                 <label for="id" class="titre2">Identifiant : </label><input type="text" id="id" name="id" placeholder="AAAA" class="my-text-input" />
             </fieldset>
