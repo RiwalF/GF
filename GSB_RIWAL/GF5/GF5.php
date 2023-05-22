@@ -30,17 +30,13 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
     <head>
         <title>Suivi de remboursement des Frais</title>
         <meta charset="utf-8">
-		<link type="text/css" rel="stylesheet" href="../GF4/GF4.css" />
+		<link type="text/css" rel="stylesheet" href="../GF.css" />
 
     </head>    
     <body>  
         <form name="GF4" action="../GF3/GF3.php" method="get">
-            <table>
-                <tr>
-                    <th><h1 class="titre">Suivi de remboursement des Frais</h1></th>
-                    <th><img src="../GF4/GSB.jpg"></th>
-                </tr>
-            </table>
+
+        <h1 class="titre2">Suivi de remboursement des Frais</h1>
             <ul class="ul1">
                 <h2 style="color:rgb(101, 141, 179);"><strong>Fiche de frais de : <?php echo strtoupper($nom_prenom[0]).strtoupper($nom_prenom[1]) ?></strong></h2>
             <ul class="ul2">
