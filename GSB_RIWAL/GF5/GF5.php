@@ -37,12 +37,11 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
         <form name="GF4" action="../GF3/GF3.php" method="get">
 
         <h1 class="titre2">Suivi de remboursement des Frais</h1>
-                <label style="color:rgb(101, 141, 179);"><strong>Fiche de frais de : <?php echo strtoupper($nom_prenom[0]).strtoupper($nom_prenom[1]) ?></strong></label>
+                <label><strong>Fiche de frais de : <?php echo strtoupper($nom_prenom[0]).strtoupper($nom_prenom[1]) ?></strong></label>
 
                 <table>
                     <tr>
                         <th><p class="classp1">Période</p></th>
-                        <th><pre>     </pre></th>
                         <th>
                             <label for="Mois" class="titre2" > Mois/Année : </label>
                             <input value = "<?php echo $mois ?>" style="width: 60px;" type="number" id="Mois" name="Mois" readonly = "readonly"/>
@@ -50,31 +49,27 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
                         </th>   
                     </tr>
                 </table>
-                
-                <h2 class="titre2">Frais au forfait</h2><BR>
-                
+                                
                 <table class="titre2" border="1px";>
                     <tr>
-                        <td align="center" width="90px"; height="70px">Repas</td>
-                        <td align="center" width="90px"; height="70px">Nuitée</td>
-                        <td align="center" width="90px"; height="70px">Etape</td>   
-                        <td align="center" width="90px"; height="70px">Km</td>    
-                        <td align="center" width="90px"; height="70px">Situation</td>    
-                        <td align="center" width="90px"; height="70px">Date opération</td>   
-                        <td align="center" width="90px"; height="70px">Remboursement</td>     
+                        <th align="center" width="90px"; height="70px">Repas</th>
+                        <th align="center" width="90px"; height="70px">Nuitée</th>
+                        <th align="center" width="90px"; height="70px">Etape</th>   
+                        <th align="center" width="90px"; height="70px">Km</th>    
+                        <th align="center" width="90px"; height="70px">Situation</th>    
+                        <th align="center" width="90px"; height="70px">Date opération</th>   
+                        <th align="center" width="90px"; height="70px">Remboursement</th>     
+                    </tr>
+                    <tr>
+                    <td align="center" width="90px"; height="70px"><?php echo $REP; ?></td>
+                    <td align="center" width="90px"; height="70px"><?php echo $NUI; ?></td>
+                    <td align="center" width="90px"; height="70px"><?php echo $ETP; ?></td>   
+                    <td align="center" width="90px"; height="70px"><?php echo $KM; ?></td>    
+                    <td align="center" width="90px"; height="70px"><?php echo $ID_ETAT[0]; ?></td>  
+                    <td align="right" width="90px"; height="70px"><?php echo $tab[6] ?></td>   
+                    <td align="right" width="90px"; height="70px"><?php echo $tab[5]."€"; ?></td>   
                     </tr>
                 </table>
-                <table class="titre2">
-                    <tr>
-                        <td align="center" width="90px"; height="70px"><?php echo $REP; ?></td>
-                        <td align="center" width="90px"; height="70px"><?php echo $NUI; ?></td>
-                        <td align="center" width="90px"; height="70px"><?php echo $ETP; ?></td>   
-                        <td align="center" width="90px"; height="70px"><?php echo $KM; ?></td>    
-                        <td align="center" width="90px"; height="70px"><?php echo $ID_ETAT[0]; ?></td>    
-                        <td align="right" width="90px"; height="70px"><?php echo $tab[6] ?></td>   
-                        <td align="right" width="90px"; height="70px"><?php echo $tab[5]."€"; ?></td>     
-                    </tr>
-                </table></br>
 
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
