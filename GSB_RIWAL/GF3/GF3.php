@@ -41,7 +41,7 @@ $id = $_GET['id'];
 
 $nom_prenom_visiteur = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
 
-$montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN (SELECT id FROM visiteur WHERE nom='$nom_prenom_visiteur[0]' AND prenom='$nom_prenom_visiteur[1]') ORDER BY fichefrais.annee, fichefrais.mois;");
+$montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN (SELECT id FROM visiteur WHERE nom='$nom_prenom_visiteur[0]' AND prenom='$nom_prenom_visiteur[1]')");
 
 
 
@@ -84,7 +84,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
 
             <?php                
-            $fichefrais = SQLobject("SELECT * FROM `fichefrais` WHERE `idVisiteur`= '$id';");
+            $fichefrais = SQLobject("SELECT * FROM `fichefrais` WHERE `idVisiteur`= '$id' ORDER BY fichefrais.annee, fichefrais.mois;");
 
             for ($i=0; $i < count($fichefrais); $i++) 
             {   
