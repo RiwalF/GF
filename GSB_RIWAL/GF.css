@@ -47,7 +47,19 @@
 
 body {
     background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
+form {
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
 h1 {
     color: #444;
     background-color: #f2b632;
