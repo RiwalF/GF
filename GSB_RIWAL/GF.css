@@ -54,11 +54,11 @@ body {
 }
 
 form, fieldset.orange {
-    width: 400px;
+    width: 500px;
     padding: 20px;
     background-color: #f2f2f2;
-    border-color: #f2b632;
     border-radius: 5px;
+    border-color: #f2b632;
 }
 
 h1 {
