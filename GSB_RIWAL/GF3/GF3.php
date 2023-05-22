@@ -95,7 +95,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
                 <tr class="fondBlanc">
                     <th>
-                        <?php print($fichefrais[$i][2] . "/" . $fichefrais[$i][3] . " - " . $fichefrais[$i][5] . " - " . $fichefrais[$i][7]); ?>
+                        <?php print($fichefrais[$i][2] . "/" . $fichefrais[$i][3] . " - " . $fichefrais[$i][5] . "€ - " . $fichefrais[$i][7]); ?>
                     </th>
 
                     <?php                   
