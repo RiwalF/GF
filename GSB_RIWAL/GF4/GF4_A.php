@@ -13,14 +13,9 @@ $IDENTIFIANT = $_GET["id"];
     </head>    
     <body>  
         <form name="GF4" action="GF4_B.php" method="get">
-            <table>
-                <tr>
-                    <th><h1 class="titre">Gestion des Frais</h1></th>
-                </tr>
-            </table>
 
                 <fieldset>
-                <h1 class="titre2">Saisie</h1><BR>
+                <h1 class="titre2">Gestion des Frais</h1>
                 <br/>
                 <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GF3/GF3.php?id=<?php echo $IDENTIFIANT;?>'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
                 <br/><br/>
