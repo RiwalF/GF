@@ -37,7 +37,7 @@ $nom_prenom = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';");
         <form name="GF4" action="../GF3/GF3.php" method="get">
 
 
-        <fieldset>
+        <fieldset class = "orange">
         <h1 class="titre2">Suivi de remboursement des Frais</h1>
                 <label><strong>Fiche de frais de : <?php echo strtoupper($nom_prenom[0]).strtoupper($nom_prenom[1]) ?></strong></label>
 
