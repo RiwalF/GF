@@ -34,12 +34,12 @@ SQL("UPDATE `fichefrais` SET `idEtat` = 'RB' WHERE `idEtat` = 'VA';");
     </head>    
     <body>  
         <fieldset>
-            <h1 class='titre'>Erreur de connexion veuillez réessayer</h1>
+            <h1 class='titre'>Toutes les fiches validées ont été remboursées</h1>
         </fieldset>
         <div class='alert' id='alert-box'>
             <div class='ball'></div>
         </div>
         <script src='../script.js'></script>
     </body>
-</html>";
+</html>
 
