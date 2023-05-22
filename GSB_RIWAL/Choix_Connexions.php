@@ -17,6 +17,15 @@ function SQLget($sql){
     $valeur = $result->fetch_array();
     return $valeur;
 }
+function SQLobject($sql)
+{
+    $cnxBDD = connexion();
+
+    $result = $cnxBDD->query($sql)
+        or die ("Requete invalide : ".$sql);    
+    $valeur = $result->fetch_all();
+    return $valeur;
+}
 
 $annee_du_jour = date("Y")-2000;
 $mois_du_jour = date("m");
