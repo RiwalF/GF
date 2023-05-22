@@ -43,6 +43,8 @@ SQL("DELETE FROM fichefrais WHERE idVisiteur='$id' AND mois='$mois' AND annee='$
     </head>    
     <body>  
         <fieldset>
+            <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GF3/GF3.php<?php echo '?id='.$id;?>'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
+            <br/>
             <h1 class='titre'>La fiche de frais à été supprimé avec succès</h1>
         </fieldset>
         <div class='alert' id='alert-box'>
