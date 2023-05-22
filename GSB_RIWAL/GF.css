@@ -122,7 +122,7 @@ select {
     border: 2px solid red;
   }
 
-  input[type="text"] {
+  input {
     border: 1px solid #ccc;
     padding: 6px 10px;
     font-size: 16px;
@@ -134,7 +134,7 @@ select {
     box-shadow: none;
 }
 
-input[type="text"]:focus {
+input:focus {
     outline: none;
     border-color: #006699;
     box-shadow: 0 0 5px rgba(0, 102, 153, 0.5);
