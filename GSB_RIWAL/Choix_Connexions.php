@@ -65,8 +65,6 @@ if (gettype($statut_C) == "array" ){
             </head>    
             <body>  
                 <fieldset>
-                    <input type='button' name='lien0' value='Retour en arriere' onclick='self.location.href="."GSB_Connexions.php"." style='background-color:#658db3' style='color:white; font-weight:bold'onclick>
-                    <br/>
                     <h1 class='titre'>Erreur de connexion veuillez réessayer</h1>
                 </fieldset>
                 <div class='alert' id='alert-box'>
