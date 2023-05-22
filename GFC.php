@@ -14,7 +14,6 @@ ini_set("display_errors", 1);
         <table>
             <tr>
                 <th><h1 class="titre">Redirection</h1></th>
-                <th><img src="GF4/GSB.jpg"></th>
             </tr>
         </table>
 
