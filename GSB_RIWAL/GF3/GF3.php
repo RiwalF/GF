@@ -69,7 +69,7 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
                     <th><strong>Fiche de frais de : <?php echo $nom_prenom_visiteur[0]; ?></strong></th>
                     <th></th>
                     <th></th>
-                    <th><strong>Ajouter</strong><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png" width="30px"></a></th>
+                    <th><a href="../GF4/GF4_A.php?id=<?php echo $id?>"><img class="pictureCenter" src="https://annuaire-opticien.essilor.fr/media/Picto_plus.png" width="30px"></a></th>
                 </tr>
                 <tr>
                     <th title="Date">Date</th>
