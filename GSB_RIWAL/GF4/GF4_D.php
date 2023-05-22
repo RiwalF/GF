@@ -97,13 +97,9 @@ SQL("UPDATE lignefraisforfait SET quantite='$Km' WHERE idFicheFrais='$idFichefra
     </head>    
     <body>
         <form name="GF4" action="../GF3/GF3.php" method="get">
-            <table>
-                <tr>
-                    <th><h1 class='titre'>Gestion des Frais</h1></th>
-                </tr>
-            </table>
-            <fieldset>
-            <h1 class='titre2'>Fiche Frais Modifié</h1><BR>
+
+            <fieldset class="orange">
+            <h1 class='titre2'>Gestion des Frais</h1>
                 <h3 class='hp'>Repas : <?php echo $Repas_total; ?> €</h3>
                 <h3 class='hp'>Nuitées : <?php echo $Nuit_total; ?> €</h3>
                 <h3 class='hp'>Etape : <?php echo $Etape_total; ?> €</h3>

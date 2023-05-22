@@ -60,14 +60,9 @@ $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI
     </head>    
     <body>  
         <form name="GF4" action="GF4_D.php" method="get">
-            <table>
-                <tr>
-                    <th><h1 class="titre">Gestion des Frais</h1></th>
-                </tr>
-            </table>
 
-                <fieldset>
-                <h1 class="titre2">Saisie</h1><BR>
+                <fieldset class="orange">
+                <h1 class="titre2">Gestion des Frais</h1>
                 <br/>
                 <input type="button" name="lien0" value="Retour en arriere" onclick="self.location.href='../GSB_Connexions.php'" style="background-color:#658db3" style="color:white; font-weight:bold"onclick>
                 <br/><br/>
