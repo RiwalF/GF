@@ -109,7 +109,7 @@ if ($_GET['submit'] == 'Valider') {
 if ($choix == 'Valide') {
     SQL("UPDATE fichefrais SET idEtat = 'VA' WHERE id = '$idFicheFrais[0]';");
 } elseif ($choix == 'NonValide') {
-    SQL("UPDATE fichefrais SET idEtat = 'CR' WHERE id = '$idFicheFrais[0]';");
+    SQL("UPDATE fichefrais SET idEtat = 'NV' WHERE id = '$idFicheFrais[0]';");
 }
 ?>
 
