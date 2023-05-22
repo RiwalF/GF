@@ -21,8 +21,7 @@ $IDENTIFIANT = $_GET["id"];
                 <br/><br/>
                 <div>
                     <pre>
-<h class="titre2">PERIODE            </h><label for="mois" class="titre2"> Mois (2 chiffres) : </label><input value = "<?php echo date("m") ?>" readonly = "readonly" type="number" id="mois" name="mois" /><label for="Annee" class="titre2" > Année (4 chiffres) : </label><input value = "<?php echo date("Y") ?>" readonly = "readonly" type="number" id="Annee" name="Annee" />
-<h class="titre2">D'ENGAGEMENT :</h>
+<label for="mois" class="titre2"> Mois (2 chiffres) : </label><input value = "<?php echo date("m") ?>" readonly = "readonly" type="number" id="mois" name="mois" /><label for="Annee" class="titre2" > Année (4 chiffres) : </label><input value = "<?php echo date("Y") ?>" readonly = "readonly" type="number" id="Annee" name="Annee" />
                     </pre>
                 </div><BR>
                 <h2 class="titre2">Frais au forfait</h2><BR>
