@@ -110,12 +110,12 @@ if (gettype($verif) != "array"){
         <form name="GF4" action="../GF3/GF3.php" method="get">
             <fieldset class="orange">
                 <h1 class='titre2'>Gestion des Frais</h1>
-                <h3 class='hp'>Repas : <?php echo $Repas_total; ?> €</h3>
-                <h3 class='hp'>Nuitées : <?php echo $Nuit_total; ?> €</h3>
-                <h3 class='hp'>Etape : <?php echo $Etape_total; ?> €</h3>
-                <h3 class='hp'>Km : <?php echo $Km_total; ?> €</h3>
-                <h2 class='hp'>Total : <?php echo "$Total € en $Mois/$Annee" ?></h2>
-                <h2 class='hp'><?php echo $requete; ?><h2>
+                <h3>Repas : <?php echo $Repas_total; ?> €</h3>
+                <h3>Nuitées : <?php echo $Nuit_total; ?> €</h3>
+                <h3>Etape : <?php echo $Etape_total; ?> €</h3>
+                <h3>Km : <?php echo $Km_total; ?> €</h3>
+                <h2>Total : <?php echo "$Total € en $Mois/$Annee" ?></h2>
+                <h2><?php echo $requete; ?><h2>
                 <div>
 				    <input id="Valider" type="submit" value="Revenir à la gestion des fiches de frais" />
 			    </div>
