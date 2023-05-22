@@ -29,15 +29,9 @@ if (gettype($statut_C) == "array" ){
 
             </head>    
             <body>  
-                <table>
-                    <tr>
-                        <th><h1 class='titre'>Redirection</h1></th>
-                        <th><img src='GF4/GSB.jpg'></th>
-                    </tr>
-                </table>
-
                 <fieldset>
-                    <h1 class='titre2'>Erreur de connexion veuillez réessayer</h1>
+                    <h1 class='titre2'>Redirection</h1>
+                    <h1 class='titre'>Erreur de connexion veuillez réessayer</h1>
                 </fieldset>
             </body>
         </html>";
