@@ -61,11 +61,12 @@ form, fieldset.orange {
     border-color: #f2b632;
 }
 
-h1 {
+h1,h2,h3 {
     color: #444;
     background-color: #f2b632;
     padding: 10px;
 }
+
 table {
     border-collapse: collapse;
     border: 2px solid rgba(0, 0, 0, 0.623);
