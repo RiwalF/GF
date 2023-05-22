@@ -9,7 +9,6 @@ $IDENTIFIANT = $_GET["id"];
         <title>Formulaire de paiement</title>
         <meta charset="utf-8">
 		<link type="text/css" rel="stylesheet" href="../GF.css"/>
-
     </head>    
     <body>  
         <form name="GF4" action="GF4_B.php" method="get">
