@@ -45,8 +45,13 @@ $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN
 
 
 // test
-$fiche_cloture = SQLobject("SELECT `id`, `idEtat` FROM `fichefrais` WHERE idEtat = 'CR';");
+$fiche_cloture = SQLobject("SELECT `id`, `idEtat`, `mois`, `annee` FROM `fichefrais` WHERE idEtat = 'CR';");
 var_dump($fiche_cloture);
+foreach ($fichesfrais as $key => $fiche) {
+    if ($fiche[1] = "") {
+        # code...
+    }
+}
 
 
 
