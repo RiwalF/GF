@@ -43,18 +43,6 @@ $nom_prenom_visiteur = SQLget("SELECT nom,prenom FROM visiteur WHERE id = '$id';
 
 $montant = SQLget("SELECT fichefrais.id FROM fichefrais,etat WHERE idVisiteur IN (SELECT id FROM visiteur WHERE nom='$nom_prenom_visiteur[0]' AND prenom='$nom_prenom_visiteur[1]')");
 
-$annee_du_jour = date("Y");
-$mois_du_jour = date("m");
-echo $annee_du_jour." / ".$mois_du_jour;
-// test
-$fiche_cloture = SQLobject("SELECT `id`, `idEtat`, `mois`, `annee` FROM `fichefrais` WHERE idEtat = 'CR';");
-var_dump($fiche_cloture);
-foreach ($fichesfrais as $key => $fiche) {
-    if ($fiche[3] = "") {
-        # code...
-    }
-}
-
 
 
 ?>

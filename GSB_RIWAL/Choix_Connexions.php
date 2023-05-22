@@ -3,7 +3,13 @@ ini_set("display_errors", 1);
 include 'mesFonctionsGenerales.php';
 
 $id = $_GET["id"];
+function SQL($sql)
+{
+    $cnxBDD = connexion();
 
+    $result = $cnxBDD->query($sql)
+        or die ("Requete invalide : ".$sql);
+}
 function SQLget($sql){
     $cnxBDD = connexion();
     $result = $cnxBDD->query($sql)
@@ -12,7 +18,22 @@ function SQLget($sql){
     return $valeur;
 }
 
-
+$annee_du_jour = date("Y")-2000;
+$mois_du_jour = date("m");
+$fiche_cloture = SQLobject("SELECT `id`, `idEtat`, `mois`, `annee` FROM `fichefrais` WHERE idEtat = 'CR';");
+foreach ($fichesfrais as $key => $fiche) {
+    if ($fiche[3] < $annee_du_jour) {
+        SQL("UPDATE `fichefrais`
+            SET `idEtat` = 'CL'
+            WHERE `id` = ".$fiche[0].";");
+    }elseif ($fiche[3] == $annee_du_jour) {
+        if ($fiche[2] < $mois_du_jour) {
+            SQL("UPDATE `fichefrais`
+            SET `idEtat` = 'CL'
+            WHERE `id` = ".$fiche[0].";");
+        }
+    }
+}
 
 
 $statut_C = SQLget("SELECT * FROM `comptable` WHERE `Comptable_id` = '$id';");
