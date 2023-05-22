@@ -7,7 +7,7 @@ ini_set("display_errors", 1);
     <head>
         <title>Connexion au Formulaire de paiement</title>
         <meta charset="utf-8">
-		<link type="text/css" rel="stylesheet" href="GFC.css"/>
+		<link type="text/css" rel="stylesheet" href="GF.css"/>
 
     </head>    
     <body>  
