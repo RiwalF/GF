@@ -92,7 +92,7 @@ SQL("UPDATE lignefraisforfait SET quantite='$Km' WHERE idFicheFrais='$idFichefra
     <head>
         <title>formulaire de paiement</title>
         <meta charset='utf-8'>
-		<link type='text/css' rel='stylesheet' href='GF4.css' />
+		<link type="text/css" rel="stylesheet" href="../GF.css"/>
 
     </head>    
     <body>

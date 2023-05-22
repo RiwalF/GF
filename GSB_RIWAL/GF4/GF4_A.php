@@ -8,7 +8,7 @@ $IDENTIFIANT = $_GET["id"];
     <head>
         <title>Formulaire de paiement</title>
         <meta charset="utf-8">
-		<link type="text/css" rel="stylesheet" href="GF4.css"/>
+		<link type="text/css" rel="stylesheet" href="../GF.css"/>
 
     </head>    
     <body>  
