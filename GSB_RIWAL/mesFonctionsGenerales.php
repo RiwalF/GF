@@ -1,10 +1,10 @@
 <?php
 function connexion(){
-    $host = "localhost";
-        $user = "root";
-        $password = "Iroise29";
+    $host = "127.0.0.1";
+        $user = "riwal";
+        $password = "riri";
         $dbname = "gsb_frais";
-        $port ="3306";
+        $port ="3307";
 
         $mysqli = new mysqli($host, $user, $password, $dbname, $port);
         if ($mysqli->connect_errno) {

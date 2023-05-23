@@ -44,9 +44,14 @@ $annee=$_GET['annee'];
 
 $idFichefrais = SQLgetval("SELECT id FROM fichefrais WHERE idVisiteur='$id' AND mois='$mois' AND annee='$annee';");
 $Repas = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'REP' AND idFicheFrais = '$idFichefrais'");
-$Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'KM' AND idFicheFrais = '$idFichefrais'");
+
+// Controle // Changement de la recherche des kilomètre car il ne s'agit plus du nombre de kilomètre effectué mais du nombre de kilomètre au compteur
+// Controle //$Km = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'KM' AND idFicheFrais = '$idFichefrais'");
+$Km = SQLgetval("SELECT kilometrage FROM `vehicule` WHERE idVisiteur = '".$id."';");
+
 $Etape = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'ETP' AND idFicheFrais = '$idFichefrais'");
 $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI' AND idFicheFrais = '$idFichefrais'");
+
 
 
 ?>
@@ -78,7 +83,8 @@ $Nuit = SQLgetval("SELECT quantite FROM lignefraisforfait WHERE idForfait = 'NUI
 <label for="Repas" class="titre2">Repas midi :                    </label><input type="number" id="Repas" name="Repas" min="0" value="<?php echo $Repas;?>" />
 <label for="Nuit" class="titre2">Nuitées :                       </label><input type="number" id="Nuit" name="Nuit" min="0" value="<?php echo $Nuit;?>"/>
 <label for="Etape" class="titre2">Etape :                         </label><input type="number" id="Etape" name="Etape" min="0" value="<?php echo $Etape;?>"/>
-<label for="Km" class="titre2">Km :                            </label><input type="number" id="Km" name="Km" min="0" value="<?php echo $Km;?>"/>
+<!-- Controle - Changement du texte -->
+<label for="Km" class="titre2">Kilométrage véhicule :                            </label><input type="number" id="Km" name="Km" min="0" value="<?php echo $Km;?>"/>
                     </pre>
                 </div>
 

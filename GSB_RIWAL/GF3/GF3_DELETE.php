@@ -20,13 +20,33 @@ function SQLgetval($sql)
     $valeur = $result->fetch_array(2);
     return $valeur[0];
 }
-#Connexion à la base de données GSB_frais
+
+function SQLget($sql){
+    $cnxBDD = connexion();
+
+    $result = $cnxBDD->query($sql)
+        or die ("Requete invalide : ".$sql);    
+    $valeur = $result->fetch_array();
+    return $valeur[0];
+}
 
 $id=$_GET['id'];
 $mois =$_GET['mois'];
 $annee=$_GET['annee'];
 
 $idFichefrais = SQLgetval("SELECT id FROM fichefrais WHERE idVisiteur='$id' AND mois='$mois' AND annee='$annee';");
+
+// Controle // Suppression des kilomètre ajouté au véhicule grâce à cette fiche de frais
+// Controle // Récupération des kms du vehicule ainsi que des kms enregistrées 
+$KmVehicule = SQLgetval("SELECT kilometrage FROM `vehicule` WHERE idVisiteur = '".$id."';");
+$KmEnregistres = SQLget("SELECT quantite FROM `lignefraisforfait` WHERE idFicheFrais = '".$idFichefrais."' AND idForfait = 'KM';");
+
+// Controle // Soustraction de l'un vers l'autre
+$KmUpdate = $KmVehicule - $KmEnregistres;
+
+// Controle // Update du kilométrage du véhicule
+SQL("UPDATE `vehicule` SET `kilometrage`='".$KmUpdate."' WHERE idVisiteur = '".$id."';");
+
 
 #SUPPRESSION d'une ligne dans la table fichefrais
 SQL("DELETE FROM lignefraisforfait WHERE idFicheFrais='$idFichefrais';");

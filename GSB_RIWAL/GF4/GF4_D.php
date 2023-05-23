@@ -7,6 +7,16 @@ $cnxBDD = connexion();
 $idVisiteur = $_GET["id"];
 $idFichefrais = $_GET["idFichefrais"];
 
+function SQLobject($sql)
+{
+    $cnxBDD = connexion();
+
+    $result = $cnxBDD->query($sql)
+        or die ("Requete invalide : ".$sql);    
+    $valeur = $result->fetch_all();
+    return $valeur;
+}
+
 function SQLget($sql){
     $cnxBDD = connexion();
 
@@ -40,6 +50,19 @@ $Etape = $_GET["Etape"];
 $Km = $_GET["Km"];
 
 $nbJustificatifs = 0;
+
+// Controle // Recherche de kilométrage du véhicule associé à l'utilisateur connecté
+$vehicule = SQLobject("SELECT immat,kilometrage FROM `vehicule` WHERE idVisiteur = '".$idVisiteur."';");
+
+// Controle // Changement du kilométrage du véhicule
+SQL("UPDATE `vehicule` SET `kilometrage`='".$Km."' WHERE immat = '".$vehicule[0][0]."';");
+
+// Controle // Recherche les kilomètres enregistrés précedemment pour y ajouter les kilomètre réalisé durant le même mois
+$KmEnregistres = SQLget("SELECT quantite FROM `lignefraisforfait` WHERE idFicheFrais = '".$idFichefrais."' AND idForfait = 'KM';");
+
+// Controle // Calcul du nombre de kilomètre entre les kilomètres précédemment enregistrés,
+// Controle // plus les kilomètre du véhicule aujourd'hui moins les kilomètre du véhicule la dernière fois
+$Km = $KmEnregistres + $Km - $vehicule[0][1];
 
 if ($Repas <= 0){
     $Repas = 0;

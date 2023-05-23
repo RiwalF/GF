@@ -4,7 +4,15 @@ ini_set("display_errors", 1);
 include '../mesFonctionsGenerales.php';
 $cnxBDD = connexion();
 
-$idVisiteur = $_GET["id"];
+function SQLgetTAB($sql){
+    $cnxBDD = connexion();
+
+    $result = $cnxBDD->query($sql)
+        or die ("Requete invalide : ".$sql);    
+    $valeur = $result->fetch_array();
+    return $valeur;
+}
+
 
 function SQLget($sql){
     $cnxBDD = connexion();
@@ -15,12 +23,13 @@ function SQLget($sql){
     return $valeur[0];
 }
 
-function SQLgetTAB($sql){
+function SQLobject($sql)
+{
     $cnxBDD = connexion();
 
     $result = $cnxBDD->query($sql)
         or die ("Requete invalide : ".$sql);    
-    $valeur = $result->fetch_array();
+    $valeur = $result->fetch_all();
     return $valeur;
 }
 
@@ -32,7 +41,7 @@ function SQL($sql){
 }
 
 
-
+$idVisiteur = $_GET["id"];
 $Mois = $_GET["mois"];
 $Annee = $_GET["Annee"];
 $Repas = $_GET["Repas"];
@@ -41,6 +50,26 @@ $Etape = $_GET["Etape"];
 $Km = $_GET["Km"];
 
 $nbJustificatifs = 0;
+
+// Controle // Recherche de kilométrage du véhicule associé à l'utilisateur connecté
+// echo "SELECT immat,kilometrage FROM `vehicule` WHERE idVisiteur = '".$idVisiteur."';";
+$vehicule = SQLobject("SELECT immat,kilometrage FROM `vehicule` WHERE idVisiteur = '".$idVisiteur."';");
+
+// Controle // Changement du kilométrage du véhicule
+// echo "UPDATE `vehicule` SET `kilometrage`='".$Km."' WHERE immat = '".$vehicule[0][0]."';";
+SQL("UPDATE `vehicule` SET `kilometrage`='".$Km."' WHERE immat = '".$vehicule[0][0]."';");
+
+// Controle // Ajout du calcul du nombre de kilomètre effectué
+// echo $Km." - ".$vehicule[0][1];
+$Km = $Km - $vehicule[0][1];
+
+// Controle // Test du kilométrage
+if ($Km < 0) {
+    $kilometrage_verif = False;
+}else {
+    $kilometrage_verif = True;
+}
+
 
 if ($Repas <= 0){
     $Repas = 0;
@@ -83,20 +112,24 @@ $Annee -= 2000;
 
 $verif = SQLgetTAB("SELECT * FROM fichefrais WHERE idVisiteur = '$idVisiteur' AND mois = '$Mois' AND annee = $Annee");
 $requete = "";
+// Controle // Verification de la validité du kilométrage
+if ($kilometrage_verif) {
+    if (gettype($verif) != "array"){
+        SQL("INSERT INTO fichefrais(idVisiteur,mois,annee,nbJustificatifs,montantValide,dateModif,idEtat) VALUES ('$idVisiteur','$Mois','$Annee','$nbJustificatifs','$Total','$date','$idEtat');");
 
-if (gettype($verif) != "array"){
-    SQL("INSERT INTO fichefrais(idVisiteur,mois,annee,nbJustificatifs,montantValide,dateModif,idEtat) VALUES ('$idVisiteur','$Mois','$Annee','$nbJustificatifs','$Total','$date','$idEtat');");
+        $id = SQLget("SELECT MAX(id) FROM fichefrais");
 
-    $id = SQLget("SELECT MAX(id) FROM fichefrais");
-
-    SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','ETP','$Etape');");
-    SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','NUI','$Nuit');");
-    SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','REP','$Repas');");
-    SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','KM','$Km');");
-}else{
-    $requete = "ERROR impossible d'exécuter votre demande";
+        SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','ETP','$Etape');");
+        SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','NUI','$Nuit');");
+        SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','REP','$Repas');");
+        SQL("INSERT INTO lignefraisforfait(idFicheFrais, idForfait, quantite) VALUES ('$id','KM','$Km');");
+    }else{
+        $requete = "ERROR impossible d'exécuter votre demande";
+    }
+}else {
+    // Controle // Message expliquant à l'utilisateur
+    $requete = "ERROR le kilométrage du véhicule est erroné";
 }
-
 ?>
 
 

@@ -2,6 +2,23 @@
 ini_set("display_errors", 1); 
 include '../mesFonctionsGenerales.php';
 $IDENTIFIANT = $_GET["id"];
+
+function SQLobject($sql)
+{
+    $cnxBDD = connexion();
+
+    $result = $cnxBDD->query($sql)
+        or die ("Requete invalide : ".$sql);    
+    $valeur = $result->fetch_all();
+    return $valeur;
+}
+
+
+// Controle // Recherche de kilométrage du véhicule associé à l'utilisateur connecté
+// echo "SELECT immat,kilometrage FROM `vehicule` WHERE idVisiteur = '".$idVisiteur."';";
+$kilometrage = SQLobject("SELECT kilometrage FROM `vehicule` WHERE idVisiteur = '".$IDENTIFIANT."';");
+
+
 ?>
 
 <html>
@@ -29,7 +46,8 @@ $IDENTIFIANT = $_GET["id"];
 <label for="Repas" class="titre2">Repas midi :                    </label><input type="number" id="Repas" name="Repas" min="0" value="0" />
 <label for="Nuit" class="titre2">Nuitées :                       </label><input type="number" id="Nuit" name="Nuit" min="0" value="0"/>
 <label for="Etape" class="titre2">Etape :                         </label><input type="number" id="Etape" name="Etape" min="0" value="0"/>
-<label for="Km" class="titre2">Km :                            </label><input type="number" id="Km" name="Km" min="0" value="0"/>
+<!-- Controle - Changement du texte -->
+<label for="Km" class="titre2">Kilométrage véhicule :                            </label><input type="number" id="Km" name="Km" min="0" placeholder="<?php echo $kilometrage[0][0];?>"/>
                     </pre>
                 </div>
 
